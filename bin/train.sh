@@ -1,4 +1,9 @@
-# base CNN models training
+# base CNN models training and predicting
+cd models/base_cnn/model_base
+sh bin/train.sh
+sh bin/predict.sh
+cd ../../../
+
 
 # 1st stacking training
 python models/first_stacking/cnn_stacking_1.py
