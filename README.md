@@ -11,7 +11,13 @@ directories構成案 1
 │  │  │-*.dcm : train dicoms
 │  │
 │  │- stage_2_train
-│     │-*.dcm : train dicoms
+│  │  │-*.dcm : train dicoms
+│  │
+│  │- stage_2_train_images
+│  │  │-*.png : train images (created by appian's preprocess)
+│  │
+│  │- stage_2_test_images
+│  │  │-*.png : test images (created by appian's preprocess)
 │
 │
 │- output
@@ -43,8 +49,10 @@ directories構成案 1
 │
 │- intermediate_output : preprocessed files and intermediate outputs
    │- preprocessed_data
+   │  │- train.pkl : preprocessed train file (appian'a model)
    │  │- train_raw.pkl : preprocessed train file (appian'a model)
    │  │- train_folds.pkl : splitted train file (appian'a model)
+   │  │- test.pkl : preprocessed train file (appian'a model)
    │  │- test_raw.pkl : preprocessed test file (appian'a model)
    │  │- other preprocessed files
    │
