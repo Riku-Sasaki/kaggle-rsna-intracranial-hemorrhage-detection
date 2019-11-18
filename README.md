@@ -1,6 +1,6 @@
 # kaggle-rsna-intracranial-hemorrhage-detection
 
-directories庵
+directories案 1
 
 ```
 - input
