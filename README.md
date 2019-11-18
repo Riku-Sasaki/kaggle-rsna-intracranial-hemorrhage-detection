@@ -57,14 +57,14 @@ directories構成案 1
    │  │- other preprocessed files
    │
    │- model_base
-   │  │- fold{}_test.pkl
-   │  │- fold{}_valid.pkl
+   │  │- fold{0-4}_test.pkl
+   │  │- fold{0-4}_valid.pkl
    │  │- weight files
    │  │- tmp files
    │
    │- model_1
-   │  │- fold{}_test.pkl
-   │  │- fold{}_valid.pkl
+   │  │- fold{0-4}_test.pkl
+   │  │- fold{0-4}_valid.pkl
    │  │- weight files
    │  │- tmp files
    │
@@ -74,8 +74,8 @@ directories構成案 1
    │- ...
    │
    │- cnn_stacking_1
-   │  │- fold{}_test.pkl
-   │  │- fold{}_valid.pkl
+   │  │- fold{0-4}_test.pkl
+   │  │- fold{0-4}_valid.pkl
    │  │- weight files
    │  │- tmp files
    │
@@ -85,7 +85,7 @@ directories構成案 1
    │- ...
    │
    │- lgbm_second_stacking
-      │- fold{}_test.pkl
-      │- fold{}_valid.pkl
+      │- fold{0-4}_test.pkl
+      │- fold{0-4}_valid.pkl
       │- tmp files
 ```
