@@ -29,7 +29,7 @@ def get_args():
     parser.add_argument('--fold', type=int, required=True)
     parser.add_argument('--gpu', type=int, default=0)
     parser.add_argument('--snapshot')
-    parser.add_argument('--output') 
+    parser.add_argument('--output')
     parser.add_argument('--n-tta', default=1, type=int)
     return parser.parse_args()
 
@@ -144,9 +144,9 @@ def train(cfg, model):
             best.update(detail)
 
         util.save_model(model, optim, detail, cfg.fold, cfg.workdir)
-            
+
         log('[best] ep:%d loss:%.4f score:%.4f' % (best['epoch'], best['loss'], best['score']))
-            
+
         #scheduler.step(val['loss']) # reducelronplateau
         scheduler.step()
 
@@ -157,7 +157,7 @@ def run_nn(cfg, mode, model, loader, criterion=None, optim=None, scheduler=None,
     elif mode in ['valid', 'test']:
         model.eval()
     else:
-        raise 
+        raise
 
     t1 = time.time()
     losses = []
@@ -187,7 +187,7 @@ def run_nn(cfg, mode, model, loader, criterion=None, optim=None, scheduler=None,
             if (i+1) % cfg.n_grad_acc == 0:
                 optim.step() # update
                 optim.zero_grad() # flush
-            
+
         with torch.no_grad():
             ids_all.extend(ids)
             targets_all.extend(targets.cpu().numpy())
@@ -224,7 +224,7 @@ def calc_logloss(targets, outputs, eps=1e-5):
     # for RSNA
     try:
         logloss_classes = [log_loss(np.floor(targets[:,i]), np.clip(outputs[:,i], eps, 1-eps)) for i in range(6)]
-    except ValueError as e: 
+    except ValueError as e:
         logloss_classes = [1, 1, 1, 1, 1, 1]
 
     return {

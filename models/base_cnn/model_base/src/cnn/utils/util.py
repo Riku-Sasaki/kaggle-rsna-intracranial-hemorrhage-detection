@@ -34,7 +34,7 @@ def save_model(model, optim, detail, fold, dirname):
 
 def load_model(path, model, optim=None):
 
-    # remap everthing onto CPU 
+    # remap everthing onto CPU
     state = torch.load(str(path), map_location=lambda storage, location: storage)
 
     model.load_state_dict(state['model'])

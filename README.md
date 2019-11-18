@@ -17,7 +17,7 @@ directories構成案 1
 │  │  │-*.png : train images (created by appian's preprocess)
 │  │
 │  │- stage_2_test_images
-│  │  │-*.png : test images (created by appian's preprocess)
+│     │-*.png : test images (created by appian's preprocess)
 │
 │
 │- output

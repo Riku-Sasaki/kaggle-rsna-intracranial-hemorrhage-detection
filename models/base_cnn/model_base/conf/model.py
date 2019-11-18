@@ -1,15 +1,14 @@
-workdir = './model/model001'
+workdir = '../../../intermediate_output/model_base'
 seed = 20
 apex = True
 
 n_fold = 5
 epoch = 3
-#resume_from = "./model/model001/fold3_ep1.pt"
 resume_from = None
 
 batch_size = 28
 num_workers = 8
-imgsize = (410, 410) #(height, width)
+imgsize = (512, 512) #(height, width)
 
 loss = dict(
     name='BCEWithLogitsLoss',
@@ -53,8 +52,8 @@ window_policy = 2
 data = dict(
     train=dict(
         dataset_type='CustomDataset',
-        annotations='./cache/train_folds2.pkl',
-        imgdir='../input/stage_2_train_images',
+        annotations='../../../intermediate_output/preprocessed_data/train_folds.pkl',
+        imgdir='../../../input/stage_2_train_images',
         imgsize=imgsize,
         n_grad_acc=1,
         loader=dict(
@@ -70,8 +69,8 @@ data = dict(
     ),
     valid = dict(
         dataset_type='CustomDataset',
-        annotations='./cache/train_folds2.pkl',
-        imgdir='../input/stage_2_train_images',
+        annotations='../../../intermediate_output/preprocessed_data/train_folds.pkl',
+        imgdir='../../../input/stage_2_train_images',
         imgsize=imgsize,
         loader=dict(
             shuffle=False,
@@ -86,8 +85,8 @@ data = dict(
     ),
     test = dict(
         dataset_type='CustomDataset',
-        annotations='./cache/test2.pkl',
-        imgdir='../input/stage_2_test_images',
+        annotations='../../../intermediate_output/preprocessed_data/test.pkl',
+        imgdir='../../../input/stage_2_test_images',
         imgsize=imgsize,
         loader=dict(
             shuffle=False,
