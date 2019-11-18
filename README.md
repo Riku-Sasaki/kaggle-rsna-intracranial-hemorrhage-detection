@@ -51,11 +51,13 @@ directories構成案 1
    │- model_base
    │  │- fold{}_test.pkl
    │  │- fold{}_valid.pkl
+   │  │- weight files
    │  │- tmp files
    │
    │- model_1
    │  │- fold{}_test.pkl
    │  │- fold{}_valid.pkl
+   │  │- weight files
    │  │- tmp files
    │
    │- model_2
@@ -66,6 +68,7 @@ directories構成案 1
    │- cnn_stacking_1
    │  │- fold{}_test.pkl
    │  │- fold{}_valid.pkl
+   │  │- weight files
    │  │- tmp files
    │
    │- cnn_stacking_2
