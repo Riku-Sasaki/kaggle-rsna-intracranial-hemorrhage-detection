@@ -29,13 +29,9 @@ directories案 1
     - sugawarya_mlp
   - second_stacing
     - sugawarya_lgbm
- 
+
 - intermediate_output : preprocessファイル、モデルの結果など中間出力
-
-
-
-
-
-
-
+  - train_raw.pkl
+  - train_folds.pkl
+  - test_raw.pkl
 ```
