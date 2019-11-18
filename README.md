@@ -4,43 +4,49 @@ directories構成案 1
 
 ```
 │- input
-│  │- train_dcm
-│  │- test_dcm
 │  │- train.csv
 │  │- test_wo_output.csv
+│  │
+│  │- train_dcm
+│  │  │-*.dcm
+│  │
+│  │- test_dcm
+│     │-*.dcm
 │
 │
 │- output
-│  │- test.csv
+│  │- test.csv : predicted test csv
 │
 │
 │- bin
-│  │- preprocess.sh
+│  │- preprocess.sh : model_base(appian's model)内のpreprocessを実行 -> 追加で各々の
 │  │- train.sh : baseのcnnを直列train+predict -> first stacking直列 -> second stacking
 │
 │
 │- models
-│  │- base_cnn
+│  │- base_cnn : base CNN models
 │  │ │- model_base : appian's base model
 │  │ │- model_1
 │  │ │- model_2
 │  │ │- model_3
 │  │ │- ...
 │  │
-│  │- first_stacking
+│  │- first_stacking : first level stacking models
 │  │ │- cnn_stacking_1.py (ricky)
 │  │ │- cnn_stacking_2.py (shimacos)
 │  │ │- lgbm_first_stacking.py (sugawarya)
 │  │ │- mlp_stacking.py (sugawarya)
 │  │
-│  │- second_stacing
+│  │- second_stacing : second level stacking models
 │    │- lgbm_second_stacking.py (sugawarya)
 │
 │
 │- intermediate_output : preprocessed files and intermediate outputs
-  │- train_raw.pkl : preprocessed train file (based on appian'a model)
-  │- train_folds.pkl : splitted train file (based on appian'a model)
-  │- test_raw.pkl : preprocessed test file (based on appian'a model)
+  │- preprocessed_data
+  │  │- train_raw.pkl : preprocessed train file (appian'a model)
+  │  │- train_folds.pkl : splitted train file (appian'a model)
+  │  │- test_raw.pkl : preprocessed test file (appian'a model)
+  │  │- other preprocessed files
   │
   │- model_base
   │  │- fold{}_test.pkl
