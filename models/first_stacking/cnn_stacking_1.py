@@ -7,7 +7,6 @@ from tqdm import tqdm
 
 import pandas as pd
 import numpy as np
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -102,7 +101,6 @@ def pred_agg2(df):
     2nd level aggregation
     """
     pred_cols = [column for column in df.columns if "pred" in column]
-    print(pred_cols)
     a1 = (
         df.groupby("StudyInstanceUID")[pred_cols]
         .rolling(3, min_periods=1, center=True)
@@ -210,7 +208,6 @@ def make_dataset(path_to_train_raw="intermediate_output/train_raw.pkl", path_to_
         model_dfs.append(df_all)
 
     columns = list(model_dfs[0].columns)
-    print(columns)
     columns.remove("ID")
     for i, model_df in enumerate(model_dfs):
         rename_dict = {}
@@ -226,7 +223,6 @@ def make_dataset(path_to_train_raw="intermediate_output/train_raw.pkl", path_to_
 
     for i, row in df[df.isnull().any(axis=1)].iterrows():
         for column in columns:
-            print(i)
             tmp = [c for c in df.columns if column in c]
             nan_columns = []
             for j, t in enumerate(row[tmp].isnull()):
@@ -294,7 +290,6 @@ def make_dataset(path_to_train_raw="intermediate_output/train_raw.pkl", path_to_
 
     columns_test = list(model_df_list_test[0][0].columns)
     columns_test.remove("ID")
-    print(columns_test)
     averaged_df_list_test = []
     for j in range(len(model_df_list_test[0])):
         for i in range(len(model_df_list_test)):
@@ -309,9 +304,7 @@ def make_dataset(path_to_train_raw="intermediate_output/train_raw.pkl", path_to_
 
     for j, averaged_df in enumerate(averaged_df_list_test):
         for i, row in averaged_df[averaged_df.isnull().any(axis=1)].iterrows():
-            print(i)
             for column in columns_test:
-                print(j, i, column)
                 tmp = [c for c in averaged_df.columns if column in c]
                 nan_columns = []
                 for k, t in enumerate(row[tmp].isnull()):
@@ -351,7 +344,6 @@ def make_dataset(path_to_train_raw="intermediate_output/train_raw.pkl", path_to_
 
     c_all = []
     for model in models:
-        print(len([c for c in df_all.columns if model in c]))
         c_all.extend([c for c in df_all.columns if model in c])
     c_all = set(c_all)
 
@@ -502,8 +494,36 @@ class StackingModel(nn.Module):
 
 
 def cnn_stacking(df_all, test_list):
+    # define column names
+    target_cols = [
+        "any",
+        "epidural",
+        "subdural",
+        "subarachnoid",
+        "intraventricular",
+        "intraparenchymal",
+    ]
+    # define model names
+    models = [
+          'tsukiyama_inceptionv4',
+          'sasaki_se_resnext101_mixup_410_with_imagenet_norm',
+          'sasaki_se_resnext_410',
+          "tsukiyama_se_resnext",
+          "sasaki_senet154_customlabels",
+          "tsukiyama_xception",
+          "tsukiyama_inception_resnet_v2",
+          "sugawara_efficientnetb3",
+         ]
+    shimakoshi_label_dict = {
+        "pred_score0": "any_pred",
+        "pred_score1": "epidural_pred",
+        "pred_score2": "subdural_pred",
+        "pred_score3": "subarachnoid_pred",
+        "pred_score4": "intraventricular_pred",
+        "pred_score5": "intraparenchymal_pred"
+    }
+
     columns_all = list(df_all.columns.drop(['StudyInstanceUID', 'ID', 'folds', 'position']))
-    print(len(columns_all))
     columns_models = []
     for model in models:
         columns_model = [c for c in df_all.columns if model in c]
