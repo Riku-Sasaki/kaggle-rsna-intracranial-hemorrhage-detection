@@ -42,6 +42,11 @@ directories構成案 1
   │- train_folds.pkl : splitted train file (based on appian'a model)
   │- test_raw.pkl : preprocessed test file (based on appian'a model)
   │
+  │- model_base
+  │  │- fold{}_test.pkl
+  │  │- fold{}_valid.pkl
+  │  │- tmp files
+  │
   │- model_1
   │  │- fold{}_test.pkl
   │  │- fold{}_valid.pkl
