@@ -181,7 +181,7 @@ def make_dataset(path_to_train_raw="intermediate_output/train_raw.pkl", path_to_
         df_all = []
         n_tta = 5
         for n_fold in range(5):
-            df = pd.read_pickle(f"stage2_outputs/{model}/fold{n_fold}_ep2_valid_tta5.pkl")
+            df = pd.read_pickle(f"intermediate_output/{model}/fold{n_fold}_valid.pkl")
             if "shimakoshi" not in model:
                 tmp = np.zeros([len(df[0]["ids"]), 6])
                 for i in range(n_tta):
@@ -269,7 +269,7 @@ def make_dataset(path_to_train_raw="intermediate_output/train_raw.pkl", path_to_
     for model in tqdm(models):
         df_all_test = []
         for n_fold in range(5):
-            df = pd.read_pickle(f"stage2_outputs/{model}/fold{n_fold}_ep2_test_tta5.pkl")
+            df = pd.read_pickle(f"intermediate_output/{model}/fold{n_fold}_test.pkl")
             if "shimakoshi" not in model:
                 tmp = np.zeros([len(df[0]["ids"]), 6])
                 for i in range(n_tta):
@@ -377,15 +377,15 @@ def make_dataset(path_to_train_raw="intermediate_output/train_raw.pkl", path_to_
 
     if save_data:
         # save aggregated data
-        with open("df_all_preprcessed_8models.pkl", "wb") as f:
+        with open("intermediate_output/cnn_stacking_1/df_all_preprcessed_8models.pkl", "wb") as f:
             pickle.dump(df_all, f, protocol=4)
-        with open("test_list_preprocessed_8models.pkl", "wb") as f:
+        with open("intermediate_output/cnn_stacking_1/test_list_preprocessed_8models.pkl", "wb") as f:
             pickle.dump(test_list, f, protocol=4)
 
     return df_all, test_list
 
 
-def load_data(path_to_train_raw="intermediate_output/train_raw.pkl", path_to_test_raw="intermediate_output/test_raw.pkl"):
+def load_data(path_to_train_raw="intermediate_output/cnn_stacking_1/df_all_preprcessed_8models.pkl", path_to_test_raw="intermediate_output/cnn_stacking_1/test_raw.pkl"):
     """
     load aggregated dataset
     """
@@ -698,11 +698,11 @@ def cnn_stacking(df_all, test_list):
         array_pred_test.append(tmp[1:])
 
     for i in range(5):
-        with open("cnn_fold{}_valid_pred.pkl".format(i), "wb") as f:
+        with open("intermediate_output/cnn_stacking_1/fold{}_valid.pkl".format(i), "wb") as f:
             pickle.dump({"ids": ids_valid_list[i], "outputs": array_pred_valid[i]}, f)
 
 
-    sub_id_list = pd.read_csv("stage2_data/stage_2_sample_submission.csv")
+    sub_id_list = pd.read_csv("input/test_wo_output.csv")
     ids = []
     for i in range(len(sub_id_list)):
         if i%6 == 0:
@@ -714,7 +714,7 @@ def cnn_stacking(df_all, test_list):
         test_sub["ID"] = pred_test_ids[i]
         sub = pd.merge(sub, test_sub, on="ID", how="left")
         sub = sub.fillna(min(sub[target_cols].min()))
-        with open("cnn_fold{}_test_pred.pkl".format(i), "wb") as f:
+        with open("intermediate_output/cnn_stacking_1/fold{}_test.pkl".format(i), "wb") as f:
             pickle.dump({"ids": sub.ID.tolist(), "outputs": sub[target_cols].values}, f)
 
 
