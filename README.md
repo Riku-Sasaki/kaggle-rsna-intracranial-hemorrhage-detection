@@ -1,6 +1,6 @@
 # kaggle-rsna-intracranial-hemorrhage-detection
 
-directories案 1
+directories構成案 1
 
 ```
 │- input
@@ -21,6 +21,7 @@ directories案 1
 │
 │- models
 │  │- base_cnn
+│  │ │- model_base : appian's base model
 │  │ │- model_1
 │  │ │- model_2
 │  │ │- model_3
@@ -36,15 +37,15 @@ directories案 1
 │    │- lgbm_second_stacking.py (sugawarya)
 │
 │
-│- intermediate_output : preprocessファイル、モデルの結果など中間出力
-  │- train_raw.pkl
-  │- train_folds.pkl
-  │- test_raw.pkl
+│- intermediate_output : preprocessed files and intermediate outputs
+  │- train_raw.pkl : preprocessed train file (based on appian'a model)
+  │- train_folds.pkl : splitted train file (based on appian'a model)
+  │- test_raw.pkl : preprocessed test file (based on appian'a model)
   │
   │- model_1
   │  │- fold{}_test.pkl
   │  │- fold{}_valid.pkl
-  │  │- 他tmp
+  │  │- tmp files
   │
   │- model_2
   │  │- ...
@@ -54,7 +55,7 @@ directories案 1
   │- cnn_stacking_1
   │  │- fold{}_test.pkl
   │  │- fold{}_valid.pkl
-  │  │- 他tmp
+  │  │- tmp files
   │
   │- cnn_stacking_2
   │  │- ...
@@ -64,5 +65,5 @@ directories案 1
   │- lgbm_second_stacking
      │- fold{}_test.pkl
      │- fold{}_valid.pkl
-     │- 他tmp
+     │- tmp files
 ```
