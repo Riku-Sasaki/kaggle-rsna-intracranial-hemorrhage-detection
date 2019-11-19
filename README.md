@@ -49,11 +49,11 @@ directories構成案 1
 │
 │- intermediate_output : preprocessed files and intermediate outputs
    │- preprocessed_data
-   │  │- train.pkl : preprocessed train file (appian'a model)
-   │  │- train_raw.pkl : preprocessed train file (appian'a model)
-   │  │- train_folds.pkl : splitted train file (appian'a model)
-   │  │- test.pkl : preprocessed train file (appian'a model)
-   │  │- test_raw.pkl : preprocessed test file (appian'a model)
+   │  │- train.pkl : preprocessed train file (appian's model)
+   │  │- train_raw.pkl : preprocessed train file (appian's model)
+   │  │- train_folds.pkl : splitted train file (appian's model)
+   │  │- test.pkl : preprocessed train file (appian's model)
+   │  │- test_raw.pkl : preprocessed test file (appian's model)
    │  │- other preprocessed files
    │
    │- model_base
