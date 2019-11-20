@@ -1,23 +1,17 @@
 # kaggle-rsna-intracranial-hemorrhage-detection
 
-directories構成案 1
+directories
 
 ```
 │- input
 │  │- stage_2_sample_submission.csv : test csv without predicted labels
 │  │- stage_2_train.csv : train csv
 │  │
-│  │- stage_2_train
-│  │  │-*.dcm : train dicoms
-│  │
-│  │- stage_2_train
-│  │  │-*.dcm : train dicoms
-│  │
 │  │- stage_2_train_images
-│  │  │-*.png : train images (created by appian's preprocess)
+│  │  │-*.dcm : train dicoms
 │  │
 │  │- stage_2_test_images
-│     │-*.png : test images (created by appian's preprocess)
+│  │  │-*.dcm : test dicoms
 │
 │
 │- output
