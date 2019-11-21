@@ -1,0 +1,60 @@
+
+----- 2019-11-21 13:49:19 -----
+/root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_base/src/cnn/main.py valid ./conf/model.py --snapshot ../../../intermediate_output/model_base/fold0_ep2.pt --output ../../../intermediate_output/model_base/fold0_valid.pkl --n-tta 5 --fold 0 --gpu 0
+logpath: ../../../intermediate_output/model_base/valid_fold0.log
+mode: valid
+workdir: ../../../intermediate_output/model_base
+fold: 0
+batch size: 28
+acc: 1
+model: se_resnext50_32x4d
+pretrained: imagenet
+loss: BCEWithLogitsLoss
+not loading optim
+loaded model from ../../../intermediate_output/model_base/fold0_ep2.pt
+dataset_policy: all
+window_policy: 2
+read dataset (172 records)
+applied dataset_policy all (172 records)
+use default(random) sampler
+[valid] 7/7 9(s) eta:0(s) loss:0.281038 loss200:0.281038 lr:0.00e+00 auc:0.5641 micro:0.6072 macro:0.5210
+0.224845 [0.349423 0.120896 0.25642  0.141898 0.119023 0.236833]
+[valid] 7/7 3(s) eta:0(s) loss:0.292665 loss200:0.292665 lr:0.00e+00 auc:0.5465 micro:0.5880 macro:0.5049
+0.231252 [0.36545  0.122465 0.255484 0.141772 0.11917  0.248969]
+[valid] 7/7 3(s) eta:0(s) loss:0.262313 loss200:0.262313 lr:0.00e+00 auc:0.6208 micro:0.6608 macro:0.5809
+0.217067 [0.333516 0.116379 0.246552 0.138203 0.115531 0.235769]
+[valid] 7/7 3(s) eta:0(s) loss:0.264520 loss200:0.264520 lr:0.00e+00 auc:0.6623 micro:0.6919 macro:0.6326
+0.210639 [0.322994 0.113804 0.241738 0.131729 0.113254 0.227961]
+[valid] 7/7 3(s) eta:0(s) loss:0.289779 loss200:0.289779 lr:0.00e+00 auc:0.5960 micro:0.6360 macro:0.5559
+0.223613 [0.347914 0.117933 0.251957 0.142413 0.117899 0.239258]
+saved to ../../../intermediate_output/model_base/fold0_valid.pkl
+
+----- 2019-11-21 13:54:31 -----
+/root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_base/src/cnn/main.py valid ./conf/model.py --snapshot ../../../intermediate_output/model_base/fold0_ep2.pt --output ../../../intermediate_output/model_base/fold0_valid.pkl --n-tta 5 --fold 0 --gpu 0
+logpath: ../../../intermediate_output/model_base/valid_fold0.log
+mode: valid
+workdir: ../../../intermediate_output/model_base
+fold: 0
+batch size: 28
+acc: 1
+model: se_resnext50_32x4d
+pretrained: imagenet
+loss: BCEWithLogitsLoss
+not loading optim
+loaded model from ../../../intermediate_output/model_base/fold0_ep2.pt
+dataset_policy: all
+window_policy: 2
+read dataset (172 records)
+applied dataset_policy all (172 records)
+use default(random) sampler
+[valid] 7/7 9(s) eta:0(s) loss:0.281038 loss200:0.281038 lr:0.00e+00 auc:0.5641 micro:0.6072 macro:0.5210
+0.224845 [0.349423 0.120896 0.25642  0.141898 0.119023 0.236833]
+[valid] 7/7 3(s) eta:0(s) loss:0.292665 loss200:0.292665 lr:0.00e+00 auc:0.5465 micro:0.5880 macro:0.5049
+0.231252 [0.36545  0.122465 0.255484 0.141772 0.11917  0.248969]
+[valid] 7/7 3(s) eta:0(s) loss:0.262313 loss200:0.262313 lr:0.00e+00 auc:0.6208 micro:0.6608 macro:0.5809
+0.217067 [0.333516 0.116379 0.246552 0.138203 0.115531 0.235769]
+[valid] 7/7 3(s) eta:0(s) loss:0.264520 loss200:0.264520 lr:0.00e+00 auc:0.6623 micro:0.6919 macro:0.6326
+0.210639 [0.322994 0.113804 0.241738 0.131729 0.113254 0.227961]
+[valid] 7/7 3(s) eta:0(s) loss:0.289779 loss200:0.289779 lr:0.00e+00 auc:0.5960 micro:0.6360 macro:0.5559
+0.223613 [0.347914 0.117933 0.251957 0.142413 0.117899 0.239258]
+saved to ../../../intermediate_output/model_base/fold0_valid.pkl

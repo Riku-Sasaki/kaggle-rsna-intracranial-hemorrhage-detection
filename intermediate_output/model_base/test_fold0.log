@@ -1,0 +1,46 @@
+
+----- 2019-11-21 13:47:51 -----
+/root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_base/src/cnn/main.py test ./conf/model.py --snapshot ../../../intermediate_output/model_base/fold0_ep2.pt --output ../../../intermediate_output/model_base/fold0_test.pkl --n-tta 5 --fold 0 --gpu 0
+logpath: ../../../intermediate_output/model_base/test_fold0.log
+mode: test
+workdir: ../../../intermediate_output/model_base
+fold: 0
+batch size: 28
+acc: 1
+model: se_resnext50_32x4d
+pretrained: imagenet
+not loading optim
+loaded model from ../../../intermediate_output/model_base/fold0_ep2.pt
+dataset_policy: all
+window_policy: 2
+applied dataset_policy all (1074 records)
+use default(random) sampler
+
+
+
+
+
+saved to ../../../intermediate_output/model_base/fold0_test.pkl
+
+----- 2019-11-21 13:53:03 -----
+/root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_base/src/cnn/main.py test ./conf/model.py --snapshot ../../../intermediate_output/model_base/fold0_ep2.pt --output ../../../intermediate_output/model_base/fold0_test.pkl --n-tta 5 --fold 0 --gpu 0
+logpath: ../../../intermediate_output/model_base/test_fold0.log
+mode: test
+workdir: ../../../intermediate_output/model_base
+fold: 0
+batch size: 28
+acc: 1
+model: se_resnext50_32x4d
+pretrained: imagenet
+not loading optim
+loaded model from ../../../intermediate_output/model_base/fold0_ep2.pt
+dataset_policy: all
+window_policy: 2
+applied dataset_policy all (1074 records)
+use default(random) sampler
+
+
+
+
+
+saved to ../../../intermediate_output/model_base/fold0_test.pkl

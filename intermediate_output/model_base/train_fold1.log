@@ -1,0 +1,80 @@
+
+----- 2019-11-21 13:32:20 -----
+/root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_base/src/cnn/main.py train ./conf/model.py --fold 1 --gpu 0
+logpath: ../../../intermediate_output/model_base/train_fold1.log
+mode: train
+workdir: ../../../intermediate_output/model_base
+fold: 1
+batch size: 28
+acc: 1
+model: se_resnext50_32x4d
+pretrained: imagenet
+loss: BCEWithLogitsLoss
+optim: Adam
+dataset_policy: all
+window_policy: 2
+read dataset (817 records)
+applied dataset_policy all (817 records)
+use default(random) sampler
+dataset_policy: all
+window_policy: 2
+read dataset (206 records)
+applied dataset_policy all (206 records)
+use default(random) sampler
+train data: loaded 817 records
+valid data: loaded 206 records
+last_epoch: -1
+apex True
+
+----- epoch 0 -----
+
+----- 2019-11-21 13:38:51 -----
+/root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_base/src/cnn/main.py train ./conf/model.py --fold 1 --gpu 0
+logpath: ../../../intermediate_output/model_base/train_fold1.log
+mode: train
+workdir: ../../../intermediate_output/model_base
+fold: 1
+batch size: 28
+acc: 1
+model: se_resnext50_32x4d
+pretrained: imagenet
+loss: BCEWithLogitsLoss
+optim: Adam
+dataset_policy: all
+window_policy: 2
+read dataset (819 records)
+applied dataset_policy all (819 records)
+use default(random) sampler
+dataset_policy: all
+window_policy: 2
+read dataset (204 records)
+applied dataset_policy all (204 records)
+use default(random) sampler
+train data: loaded 819 records
+valid data: loaded 204 records
+last_epoch: -1
+apex True
+
+----- epoch 0 -----
+[train] 29/29 42(s) eta:0(s) loss:0.396318 loss200:0.396318 lr:6.00e-05 auc:0.5823 micro:0.5912 macro:0.5734
+0.339698 [0.363417 0.295219 0.355261 0.313766 0.309588 0.377215]
+[valid] 8/8 6(s) eta:0(s) loss:0.346594 loss200:0.346594 lr:0.00e+00 auc:0.6508 micro:0.6781 macro:0.6235
+0.300395 [0.415722 0.106784 0.323017 0.344174 0.16849  0.328857]
+saved model to ../../../intermediate_output/model_base/fold1_ep0.pt
+[best] ep:0 loss:0.3466 score:0.3004
+
+----- epoch 1 -----
+[train] 29/29 34(s) eta:0(s) loss:0.193790 loss200:0.193790 lr:4.00e-05 auc:0.8575 micro:0.8716 macro:0.8435
+0.166106 [0.232334 0.103344 0.127609 0.140189 0.111355 0.21558 ]
+[valid] 8/8 3(s) eta:0(s) loss:0.344162 loss200:0.344162 lr:0.00e+00 auc:0.5675 micro:0.6021 macro:0.5330
+0.299640 [0.391715 0.119522 0.348749 0.355956 0.176263 0.313562]
+saved model to ../../../intermediate_output/model_base/fold1_ep1.pt
+[best] ep:1 loss:0.3442 score:0.2996
+
+----- epoch 2 -----
+[train] 29/29 34(s) eta:0(s) loss:0.159026 loss200:0.159026 lr:2.67e-05 auc:0.9173 micro:0.9292 macro:0.9053
+0.136308 [0.182446 0.088081 0.110026 0.116225 0.095725 0.179203]
+[valid] 8/8 3(s) eta:0(s) loss:0.329443 loss200:0.329443 lr:0.00e+00 auc:0.6968 micro:0.7193 macro:0.6742
+0.280214 [0.383827 0.109078 0.316727 0.327129 0.155588 0.285321]
+saved model to ../../../intermediate_output/model_base/fold1_ep2.pt
+[best] ep:2 loss:0.3294 score:0.2802

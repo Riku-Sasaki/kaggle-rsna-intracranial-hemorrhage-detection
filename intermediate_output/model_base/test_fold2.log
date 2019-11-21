@@ -1,0 +1,11 @@
+
+----- 2019-11-21 13:57:07 -----
+/root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_base/src/cnn/main.py test ./conf/model.py --snapshot ../../../intermediate_output/model_base/fold2_ep2.pt --output ../../../intermediate_output/model_base/fold2_test.pkl --n-tta 5 --fold 2 --gpu 0
+logpath: ../../../intermediate_output/model_base/test_fold2.log
+mode: test
+workdir: ../../../intermediate_output/model_base
+fold: 2
+batch size: 28
+acc: 1
+model: se_resnext50_32x4d
+pretrained: imagenet
