@@ -9,3 +9,15 @@ batch size: 28
 acc: 1
 model: se_resnext50_32x4d
 pretrained: imagenet
+not loading optim
+loaded model from ../../../intermediate_output/model_base/fold2_ep2.pt
+dataset_policy: all
+window_policy: 2
+applied dataset_policy all (1074 records)
+use default(random) sampler
+
+
+
+
+
+saved to ../../../intermediate_output/model_base/fold2_test.pkl
