@@ -3,6 +3,10 @@
 directories
 
 ```
+
+│- raw_scripts : raw scripts that we used during the competition
+│
+│
 │- input
 │  │- stage_2_sample_submission.csv : test csv without predicted labels
 │  │- stage_2_train.csv : train csv
