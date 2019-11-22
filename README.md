@@ -59,6 +59,7 @@ directories
    │  │- train_folds.pkl : splitted train file (appian's base model)
    │  │- test.pkl : preprocessed train file (appian's base model)
    │  │- test_raw.pkl : preprocessed test file (appian's base model)
+   │  │
    │  │- train_model_3.pkl : preprocessed train file (ricky's model_3)
    │  │- train_raw_model_3.pkl : preprocessed train file (ricky's model_3)
    │  │- train_folds_model_3.pkl : splitted train file (ricky's model_3)
