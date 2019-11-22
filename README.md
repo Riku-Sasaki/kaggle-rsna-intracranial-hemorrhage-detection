@@ -30,9 +30,16 @@ directories
 │- models
 │  │- base_cnn : base CNN models
 │  │  │- model_base : appian's base model
-│  │  │- model_1
-│  │  │- model_2
-│  │  │- model_3
+│  │  │- model_1 : ricky's resize 410 model
+│  │  │- model_2 : ricky's second model
+│  │  │- model_3 : ricky's custom labels model
+│  │  │- model_4
+│  │  │- model_5
+│  │  │- model_6
+│  │  │- model_7
+│  │  │- model_8
+│  │  │- model_9
+│  │  │- model_10
 │  │  │- ...
 │  │
 │  │- first_stacking : first level stacking models
@@ -47,23 +54,30 @@ directories
 │
 │- intermediate_output : preprocessed files and intermediate outputs
    │- preprocessed_data
-   │  │- train.pkl : preprocessed train file (appian's model)
-   │  │- train_raw.pkl : preprocessed train file (appian's model)
-   │  │- train_folds.pkl : splitted train file (appian's model)
-   │  │- test.pkl : preprocessed train file (appian's model)
-   │  │- test_raw.pkl : preprocessed test file (appian's model)
+   │  │- train.pkl : preprocessed train file (appian's base model)
+   │  │- train_raw.pkl : preprocessed train file (appian's base model)
+   │  │- train_folds.pkl : splitted train file (appian's base model)
+   │  │- test.pkl : preprocessed train file (appian's base model)
+   │  │- test_raw.pkl : preprocessed test file (appian's base model)
+   │  │- train_model_3.pkl : preprocessed train file (ricky's model_3)
+   │  │- train_raw_model_3.pkl : preprocessed train file (ricky's model_3)
+   │  │- train_folds_model_3.pkl : splitted train file (ricky's model_3)
+   │  │- test_model_3.pkl : preprocessed train file (ricky's model_3)
+   │  │- test_raw_model_3.pkl : preprocessed test file (ricky's model_3)
    │  │- other preprocessed files
    │
    │- model_base
    │  │- fold{0-4}_test.pkl
    │  │- fold{0-4}_valid.pkl
    │  │- weight files
+   │  │- log files
    │  │- tmp files
    │
    │- model_1
    │  │- fold{0-4}_test.pkl
    │  │- fold{0-4}_valid.pkl
    │  │- weight files
+   │  │- log files
    │  │- tmp files
    │
    │- model_2
