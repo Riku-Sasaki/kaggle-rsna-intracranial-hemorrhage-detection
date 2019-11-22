@@ -1,5 +1,5 @@
 model=model
-modelname=model_base
+modelname=model_1
 gpu=0
 ep=2
 tta=5
