@@ -3,7 +3,7 @@ seed = 20
 apex = True
 
 n_fold = 5
-epoch = 5
+epoch = 3
 #resume_from = "./model/model001/fold3_ep1.pt"
 resume_from = None
 

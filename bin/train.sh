@@ -1,17 +1,17 @@
 # base CNN models training and predicting
 cd models/base_cnn/model_base
-sh bin/train.sh
-sh bin/predict.sh
+#sh bin/train.sh
+#sh bin/predict.sh
 cd ../../../
 
 cd models/base_cnn/model_1
-sh bin/train.sh
-sh bin/predict.sh
+#sh bin/train.sh
+#sh bin/predict.sh
 cd ../../../
 
 cd models/base_cnn/model_2
-sh bin/train.sh
-sh bin/predict.sh
+#sh bin/train.sh
+#sh bin/predict.sh
 cd ../../../
 
 cd models/base_cnn/model_3

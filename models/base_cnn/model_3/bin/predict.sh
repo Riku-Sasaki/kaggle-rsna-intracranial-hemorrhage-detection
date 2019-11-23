@@ -36,6 +36,6 @@ python -m src.cnn.main valid ${conf} --snapshot ${snapshot} --output ${valid} --
 fold=4
 snapshot=../../../intermediate_output/${modelname}/fold${fold}_ep${ep}.pt
 valid=../../../intermediate_output/${modelname}/fold${fold}_valid.pkl
-test=../../../intermediate_output/model${modelname}_base/fold${fold}_test.pkl
+test=../../../intermediate_output/${modelname}/fold${fold}_test.pkl
 python -m src.cnn.main test ${conf} --snapshot ${snapshot} --output ${test} --n-tta ${tta} --fold ${fold} --gpu ${gpu}
 python -m src.cnn.main valid ${conf} --snapshot ${snapshot} --output ${valid} --n-tta ${tta} --fold ${fold} --gpu ${gpu}

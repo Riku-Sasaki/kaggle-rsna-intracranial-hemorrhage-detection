@@ -1,0 +1,30 @@
+
+----- 2019-11-23 13:06:41 -----
+/root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_2/src/cnn/main.py valid ./conf/model.py --snapshot ../../../intermediate_output/model_2/fold0_ep2.pt --output ../../../intermediate_output/model_2/fold0_valid.pkl --n-tta 5 --fold 0 --gpu 0
+logpath: ../../../intermediate_output/model_2/valid_fold0.log
+mode: valid
+workdir: ../../../intermediate_output/model_2
+fold: 0
+batch size: 28
+acc: 1
+model: se_resnext101_32x4d
+pretrained: imagenet
+loss: BCEWithLogitsLoss
+not loading optim
+loaded model from ../../../intermediate_output/model_2/fold0_ep2.pt
+dataset_policy: all
+window_policy: 2
+read dataset (172 records)
+applied dataset_policy all (172 records)
+use default(random) sampler
+[valid] 7/7 9(s) eta:0(s) loss:0.346220 loss200:0.346220 lr:0.00e+00 auc:0.5358 micro:0.5556 macro:0.5160
+0.245283 [0.383056 0.12525  0.344546 0.143    0.127932 0.210139]
+[valid] 7/7 3(s) eta:0(s) loss:0.375944 loss200:0.375944 lr:0.00e+00 auc:0.5851 micro:0.5986 macro:0.5716
+0.244594 [0.391039 0.117819 0.345905 0.139359 0.124009 0.202983]
+[valid] 7/7 3(s) eta:0(s) loss:0.345025 loss200:0.345025 lr:0.00e+00 auc:0.5345 micro:0.5581 macro:0.5110
+0.249540 [0.39998  0.123009 0.343907 0.142542 0.127184 0.210179]
+[valid] 7/7 3(s) eta:0(s) loss:0.361651 loss200:0.361651 lr:0.00e+00 auc:0.5201 micro:0.5500 macro:0.4901
+0.250235 [0.395002 0.124991 0.336607 0.149356 0.128629 0.222058]
+[valid] 7/7 3(s) eta:0(s) loss:0.340496 loss200:0.340496 lr:0.00e+00 auc:0.6047 micro:0.6114 macro:0.5980
+0.240251 [0.38691  0.114541 0.338614 0.131078 0.119057 0.204644]
+saved to ../../../intermediate_output/model_2/fold0_valid.pkl
