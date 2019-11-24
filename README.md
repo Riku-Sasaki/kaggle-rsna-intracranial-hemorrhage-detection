@@ -1,14 +1,24 @@
 # kaggle-rsna-intracranial-hemorrhage-detection
 
-### usage
+## Pipeline
+
+![](./fig/RSNA_pipeline.png)
+
+## usage
 ```
 sh bin/build_image.sh
 sh bin/preprocess.sh
+
+# If you want to run all scripts (take a long time)
+sh bin/run.sh
+
+# If you want to train specific model
+cd models/base_cnn/[model_name]/
 sh bin/train.sh
 ```
 
 
-### directories
+## directories
 ```
 
 │- raw_scripts : raw scripts that we used during the competition
@@ -37,14 +47,14 @@ sh bin/train.sh
 │- models
 │  │- base_cnn : base CNN models
 │  │  │- model_base : appian's base model
-│  │  │- ricky_se_resnext_410 : resize 410 model
-│  │  │- ricky_se_resnext101_mixup : chenge backbone to se_resnext101 and use mixup
+│  │  │- ricky_se_resnext_410 : chenge img_size of backbone to 410 
+│  │  │- ricky_se_resnext101_mixup : chenge backbone of model_base to se_resnext101 and use mixup
 │  │  │- ricky_senet154_customlabels : custom labels model
 │  │  │- shimacos_models : using adjacent image / label_smoothing / without any prediction 
-│  │  │- sugawara_efficientnetb3 : chenge backbone to efficientnetb3
-│  │  │- model_5
-│  │  │- model_6
-│  │  │- model_7
+│  │  │- sugawara_efficientnetb3 : chenge backbone of model_base to efficientnetb3
+│  │  │- 2kyym_inception_resnet_v2 : chenge backbone of model_base to InceptionResnetV2
+│  │  │- 2kyym_inceptionv4 : chenge backbone of model_base to InceptionV4
+│  │  │- 2kyym_inceptionv4 : chenge backbone of model_base to Xception
 │  │
 │  │- first_stacking : first level stacking models
 │  │  │- cnn_stacking_1.py (ricky)
