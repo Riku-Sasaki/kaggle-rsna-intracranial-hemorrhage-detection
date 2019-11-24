@@ -29,6 +29,7 @@ sh bin/train_002.sh
 sh bin/test_002.sh
 sh bin/train_003.sh
 sh bin/test_003.sh
+cd ../../../
 
 
 # 1st stacking training
