@@ -48,9 +48,16 @@ docker run --rm \
     --ipc=host \
     kaggle/pytorch \
     python cnn_stacking_2.py
+
+cd models/first_stacking
+python preprocess_for_sugawara_stacking1.py
+python get_feats_for_first_stacking_sugawara.py
 python lgbm_first_stacking.py
 python mlp_stacking.py
 cd ../../
 
 # 2nd stacking training
-python models/second_stacking/lgbm_second_stacking.py
+cd models/second_stacking
+python preprocess_for_sugawara_stacking2.py
+python get_feats_for_2nd_stacking.py
+python lgbm_second_stacking.py
