@@ -38,24 +38,11 @@ sh bin/predict.sh
 cd ../../../
 
 # 1st stacking training
-python models/first_stacking/cnn_stacking_1.py
 cd models/first_stacking
-docker run --rm \
-    -v $PWD/:/root/ \
-    -v $PWD/../../intermediate_output/:/root/intermediate_output/ \
-    -v $HOME/.cache/:/root/.cache \
-    --runtime=nvidia \
-    --ipc=host \
-    kaggle/pytorch \
-    python cnn_stacking_2.py
-python preprocess_for_sugawara_stacking1.py
-python get_feats_for_first_stacking_sugawara.py
-python lgbm_first_stacking.py
-python mlp_stacking.py
+sh ./bin/stacking.sh
 cd ../../
 
 # 2nd stacking training
 cd models/second_stacking
-python preprocess_for_sugawara_stacking2.py
-python get_feats_for_2nd_stacking.py
-python lgbm_second_stacking.py
+sh ./bin/stacking.sh
+cd ../../

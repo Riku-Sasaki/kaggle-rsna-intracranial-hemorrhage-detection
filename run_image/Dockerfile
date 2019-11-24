@@ -33,15 +33,15 @@ RUN curl -o ~/miniconda.sh -O  https://repo.continuum.io/miniconda/Miniconda3-la
 ENV PATH /opt/conda/bin:$PATH
 
 RUN  pip install --upgrade pip \
-     && pip install --upgrade setuptools \
      && pip install --ignore-installed opencv-python \
      albumentations==0.3.2 \
      addict \
+     lightgbm \
      setuptools \
      tqdm \
      joblib \
+     keras \
      pyarrow \
-     hyperdash \
      pyyaml \
      scikit-learn \
      scikit-image \
@@ -58,8 +58,12 @@ RUN  pip install --upgrade pip \
      && cd .. \ 
      && rm -r apex
 
-RUN pip install -U --no-deps pytorch-lightning== \
-     && pip install test_tube
+RUN pip install -U --no-deps pytorch-lightning==0.5.3.2 \
+     && pip install test_tube \
+     numpy==1.16.4 \
+     scikit-learn==0.20.2 \
+     tqdm==4.35.0 \
+     tensorflow-gpu
 
 WORKDIR /root/
 

@@ -17,7 +17,7 @@ docker run --rm \
     -v $HOME/.cache/:/root/.cache \
     --runtime=nvidia \
     --ipc=host \
-    kaggle/pytorch \
+    kaggle/rsna \
     python -m src.cnn.main test ${conf} --snapshot ${snapshot} --output ${test} --n-tta ${tta} --fold ${fold} --gpu ${gpu}
 docker run --rm \
     -v $PWD/:/root/ \
@@ -26,6 +26,6 @@ docker run --rm \
     -v $HOME/.cache/:/root/.cache \
     --runtime=nvidia \
     --ipc=host \
-    kaggle/pytorch \
+    kaggle/rsna \
     python -m src.cnn.main valid ${conf} --snapshot ${snapshot} --output ${valid} --n-tta ${tta} --fold ${fold} --gpu ${gpu}
 done

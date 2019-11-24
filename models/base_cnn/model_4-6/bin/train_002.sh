@@ -7,6 +7,6 @@ docker run --rm \
     -v $HOME/.cache/:/root/.cache \
     --runtime=nvidia \
     --ipc=host \
-    kaggle/pytorch \
+    kaggle/rsna \
     python main.py --fold $i --train --yaml ./yamls/002_seresnext_label_smooth.yaml
 done
