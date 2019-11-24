@@ -57,9 +57,9 @@ window_policy = 2
 
 data = dict(
     train=dict(
-        dataset_type='CustomDataset',
-        annotations='./cache/train_folds2.pkl',
-        imgdir='./input/stage_2_train_images',
+        dataset_type="CustomDataset",
+        annotations="./intermediate_output/preprocessed_data/train_folds.pkl",
+        imgdir="./input/stage_2_train_images",
         imgsize=imgsize,
         n_grad_acc=1,
         loader=dict(
@@ -70,30 +70,13 @@ data = dict(
             pin_memory=False,
         ),
         transforms=[crop, hflip, rotate, contrast, totensor],
-        dataset_policy='all',
-        window_policy=window_policy,
-    ),
-    train_pseudo=dict(
-        dataset_type='CustomDataset',
-        annotations='./cache/test2.pkl',
-        imgdir='./input/stage_2_test_images',
-        imgsize=imgsize,
-        n_grad_acc=1,
-        loader=dict(
-            shuffle=True,
-            batch_size=batch_size,
-            drop_last=True,
-            num_workers=num_workers,
-            pin_memory=False,
-        ),
-        transforms=[crop, hflip, rotate, contrast, totensor],
-        dataset_policy='all',
+        dataset_policy="all",
         window_policy=window_policy,
     ),
     valid=dict(
-        dataset_type='CustomDataset',
-        annotations='./cache/train_folds2.pkl',
-        imgdir='./input/stage_2_train_images',
+        dataset_type="CustomDataset",
+        annotations="./intermediate_output/preprocessed_data/train_folds.pkl",
+        imgdir="./input/stage_2_train_images",
         imgsize=imgsize,
         loader=dict(
             shuffle=False,
@@ -103,13 +86,13 @@ data = dict(
             pin_memory=False,
         ),
         transforms=[crop, hflip, rotate, contrast, totensor],
-        dataset_policy='all',
+        dataset_policy="all",
         window_policy=window_policy,
     ),
     test=dict(
-        dataset_type='CustomDataset',
-        annotations='./cache/test.pkl',
-        imgdir='./input/stage_1_test_images',
+        dataset_type="CustomDataset",
+        annotations="./intermediate_output/preprocessed_data/test.pkl",
+        imgdir="./input/stage_2_test_images",
         imgsize=imgsize,
         loader=dict(
             shuffle=False,
@@ -119,8 +102,7 @@ data = dict(
             pin_memory=False,
         ),
         transforms=[crop, hflip, rotate, contrast, totensor],
-        dataset_policy='all',
+        dataset_policy="all",
         window_policy=window_policy,
     ),
 )
-
