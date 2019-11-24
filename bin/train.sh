@@ -2,25 +2,30 @@
 
 # base CNN models training and predicting
 cd models/base_cnn/model_base
-sh bin/train.sh
+# sh bin/train.sh
 sh bin/predict.sh
 cd ../../../
 
 cd models/base_cnn/model_1
-sh bin/train.sh
+# sh bin/train.sh
 sh bin/predict.sh
 cd ../../../
 
 cd models/base_cnn/model_2
-sh bin/train.sh
+# sh bin/train.sh
 sh bin/predict.sh
 cd ../../../
 
 cd models/base_cnn/model_3
-sh bin/train.sh
+# sh bin/train.sh
 sh bin/predict.sh
 cd ../../../
 
+<<<<<<< HEAD
+cd models/base_cnn/sugawara_efficientnetb3
+# sh bin/train.sh
+sh bin/predict.sh
+=======
 # shimacos's model
 cd models/base_cnn/densenet_adj_prediction
 sh bin/train_001.sh
@@ -35,6 +40,7 @@ cd ../../../
 cd models/base_cnn/seresnext50_label_smoothing_without_any
 sh bin/train_003.sh
 sh bin/test_003.sh
+>>>>>>> origin
 cd ../../../
 
 # 1st stacking training
