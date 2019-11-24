@@ -1,4 +1,4 @@
-workdir = '../../../intermediate_output/model_3'
+workdir = "./intermediate_output/model_3"
 seed = 20
 apex = True
 
@@ -8,52 +8,40 @@ resume_from = None
 
 batch_size = 28
 num_workers = 8
-imgsize = (320, 320) #(height, width)
+imgsize = (320, 320)  # (height, width)
 
-loss = dict(
-    name='BCEWithLogitsLoss',
-    params=dict(),
+loss = dict(name="BCEWithLogitsLoss", params=dict())
+
+optim = dict(name="Adam", params=dict(lr=6e-5))
+
+model = dict(name="senet154", pretrained="imagenet", n_output=6)
+
+scheduler = dict(name="MultiStepLR", params=dict(milestones=[1, 2], gamma=2 / 3))
+
+normalize = {"mean": [0.485, 0.456, 0.406], "std": [0.229, 0.224, 0.225]}
+# normalize = None
+
+crop = dict(
+    name="RandomResizedCrop",
+    params=dict(height=imgsize[0], width=imgsize[1], scale=(0.7, 1.0), p=1.0),
 )
-
-optim = dict(
-    name='Adam',
-    params=dict(
-        lr=6e-5,
-    ),
+resize = dict(name="Resize", params=dict(height=imgsize[0], width=imgsize[1]))
+hflip = dict(name="HorizontalFlip", params=dict(p=0.5))
+vflip = dict(name="VerticalFlip", params=dict(p=0.5))
+contrast = dict(
+    name="RandomBrightnessContrast",
+    params=dict(brightness_limit=0.08, contrast_limit=0.08, p=0.5),
 )
-
-model = dict(
-    name='senet154',
-    pretrained="imagenet",
-    n_output=6,
-)
-
-scheduler = dict(
-    name='MultiStepLR',
-    params=dict(
-        milestones=[1,2],
-        gamma=2/3,
-    ),
-)
-
-normalize = {'mean': [0.485, 0.456, 0.406], 'std': [0.229, 0.224, 0.225],}
-#normalize = None
-
-crop = dict(name='RandomResizedCrop', params=dict(height=imgsize[0], width=imgsize[1], scale=(0.7,1.0), p=1.0))
-resize = dict(name='Resize', params=dict(height=imgsize[0], width=imgsize[1]))
-hflip = dict(name='HorizontalFlip', params=dict(p=0.5,))
-vflip = dict(name='VerticalFlip', params=dict(p=0.5,))
-contrast = dict(name='RandomBrightnessContrast', params=dict(brightness_limit=0.08, contrast_limit=0.08, p=0.5))
-totensor = dict(name='ToTensor', params=dict(normalize=normalize))
-rotate = dict(name='Rotate', params=dict(limit=30, border_mode=0), p=0.7)
+totensor = dict(name="ToTensor", params=dict(normalize=normalize))
+rotate = dict(name="Rotate", params=dict(limit=30, border_mode=0), p=0.7)
 
 window_policy = 2
 
 data = dict(
     train=dict(
-        dataset_type='CustomDataset',
-        annotations='../../../intermediate_output/preprocessed_data/train_folds_model_3.pkl',
-        imgdir='../../../input/stage_2_train_images',
+        dataset_type="CustomDataset",
+        annotations="./intermediate_output/preprocessed_data/train_folds_model_3.pkl",
+        imgdir="./input/stage_2_train_images",
         imgsize=imgsize,
         n_grad_acc=1,
         loader=dict(
@@ -64,13 +52,13 @@ data = dict(
             pin_memory=False,
         ),
         transforms=[crop, hflip, rotate, contrast, totensor],
-        dataset_policy='all',
+        dataset_policy="all",
         window_policy=window_policy,
     ),
-    valid = dict(
-        dataset_type='CustomDataset',
-        annotations='../../../intermediate_output/preprocessed_data/train_folds_model_3.pkl',
-        imgdir='../../../input/stage_2_train_images',
+    valid=dict(
+        dataset_type="CustomDataset",
+        annotations="./intermediate_output/preprocessed_data/train_folds_model_3.pkl",
+        imgdir="./input/stage_2_train_images",
         imgsize=imgsize,
         loader=dict(
             shuffle=False,
@@ -80,13 +68,13 @@ data = dict(
             pin_memory=False,
         ),
         transforms=[crop, hflip, rotate, contrast, totensor],
-        dataset_policy='all',
+        dataset_policy="all",
         window_policy=window_policy,
     ),
-    test = dict(
-        dataset_type='CustomDataset',
-        annotations='../../../intermediate_output/preprocessed_data/test_model_3.pkl',
-        imgdir='../../../input/stage_2_test_images',
+    test=dict(
+        dataset_type="CustomDataset",
+        annotations="./intermediate_output/preprocessed_data/test_model_3.pkl",
+        imgdir="./input/stage_2_test_images",
         imgsize=imgsize,
         loader=dict(
             shuffle=False,
@@ -96,7 +84,7 @@ data = dict(
             pin_memory=False,
         ),
         transforms=[crop, hflip, rotate, contrast, totensor],
-        dataset_policy='all',
+        dataset_policy="all",
         window_policy=window_policy,
     ),
 )

@@ -35,7 +35,8 @@ ENV PATH /opt/conda/bin:$PATH
 RUN  pip install --upgrade pip \
      && pip install --upgrade setuptools \
      && pip install --ignore-installed opencv-python \
-     albumentations \
+     albumentations==0.3.3 \
+     addict \
      setuptools \
      tqdm \
      joblib \
