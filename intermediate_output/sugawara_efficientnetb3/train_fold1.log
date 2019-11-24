@@ -49,3 +49,54 @@ saved model to ../../../intermediate_output/sugawara_efficientnetb3/fold1_ep1.pt
 0.360820 [0.408512 0.25317  0.368793 0.391166 0.291552 0.404034]
 saved model to ../../../intermediate_output/sugawara_efficientnetb3/fold1_ep2.pt
 [best] ep:2 loss:0.4264 score:0.3608
+
+----- 2019-11-24 09:26:56 -----
+/root/user/project/submit_dir/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/sugawara_efficientnetb3/src/cnn/main.py train ./conf/model.py --fold 1 --gpu 0
+logpath: ../../../intermediate_output/sugawara_efficientnetb3/train_fold1.log
+mode: train
+workdir: ../../../intermediate_output/sugawara_efficientnetb3
+fold: 1
+batch size: 28
+acc: 1
+model: efficientnet-b3
+pretrained: imagenet
+loss: BCEWithLogitsLoss
+optim: Adam
+dataset_policy: all
+window_policy: 2
+read dataset (819 records)
+applied dataset_policy all (819 records)
+use default(random) sampler
+dataset_policy: all
+window_policy: 2
+read dataset (204 records)
+applied dataset_policy all (204 records)
+use default(random) sampler
+train data: loaded 819 records
+valid data: loaded 204 records
+last_epoch: -1
+apex True
+
+----- epoch 0 -----
+[train] 29/29 23(s) eta:0(s) loss:0.681305 loss200:0.681305 lr:6.00e-05 auc:0.5704 micro:0.5961 macro:0.5446
+0.583967 [0.595193 0.550047 0.560967 0.601514 0.564584 0.620271]
+[valid] 8/8 3(s) eta:0(s) loss:0.692012 loss200:0.692012 lr:0.00e+00 auc:0.4884 micro:0.5180 macro:0.4588
+0.589641 [0.62983  0.529513 0.592585 0.572264 0.522609 0.650853]
+saved model to ../../../intermediate_output/sugawara_efficientnetb3/fold1_ep0.pt
+[best] ep:0 loss:0.6920 score:0.5896
+
+----- epoch 1 -----
+[train] 29/29 16(s) eta:0(s) loss:0.453018 loss200:0.453018 lr:4.00e-05 auc:0.5981 micro:0.6161 macro:0.5800
+0.388299 [0.398468 0.348102 0.352289 0.408735 0.355902 0.456127]
+[valid] 8/8 2(s) eta:0(s) loss:0.514890 loss200:0.514890 lr:0.00e+00 auc:0.4994 micro:0.5241 macro:0.4746
+0.437161 [0.475325 0.341196 0.451636 0.459531 0.364159 0.492952]
+saved model to ../../../intermediate_output/sugawara_efficientnetb3/fold1_ep1.pt
+[best] ep:1 loss:0.5149 score:0.4372
+
+----- epoch 2 -----
+[train] 29/29 16(s) eta:0(s) loss:0.345481 loss200:0.345481 lr:2.67e-05 auc:0.7339 micro:0.7498 macro:0.7180
+0.296125 [0.325275 0.245587 0.257083 0.304285 0.251992 0.363377]
+[valid] 8/8 2(s) eta:0(s) loss:0.426477 loss200:0.426477 lr:0.00e+00 auc:0.6578 micro:0.6708 macro:0.6447
+0.360876 [0.408623 0.253173 0.368909 0.391246 0.291597 0.403961]
+saved model to ../../../intermediate_output/sugawara_efficientnetb3/fold1_ep2.pt
+[best] ep:2 loss:0.4265 score:0.3609

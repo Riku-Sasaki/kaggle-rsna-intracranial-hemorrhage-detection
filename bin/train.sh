@@ -31,6 +31,11 @@ sh bin/train_003.sh
 sh bin/test_003.sh
 cd ../../../
 
+# sugawarya model
+cd models/base_cnn/sugawara_efficientnetb3
+sh bin/train.sh
+sh bin/predict.sh
+cd ../../../
 
 # 1st stacking training
 cd models/first_stacking

@@ -43,3 +43,37 @@ use default(random) sampler
 
 
 saved to ../../../intermediate_output/sugawara_efficientnetb3/fold4_test.pkl
+
+----- 2019-11-24 09:33:45 -----
+/root/user/project/submit_dir/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/sugawara_efficientnetb3/src/cnn/main.py test ./conf/model.py --snapshot ../../../intermediate_output/model_base/fold4_ep2.pt --output ../../../intermediate_output/model_base/fold4_test.pkl --n-tta 5 --fold 4 --gpu 0
+logpath: ../../../intermediate_output/sugawara_efficientnetb3/test_fold4.log
+mode: test
+workdir: ../../../intermediate_output/sugawara_efficientnetb3
+fold: 4
+batch size: 28
+acc: 1
+model: efficientnet-b3
+pretrained: imagenet
+
+----- 2019-11-24 09:44:30 -----
+/root/user/project/submit_dir/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/sugawara_efficientnetb3/src/cnn/main.py test ./conf/model.py --snapshot ../../../intermediate_output/sugawara_efficientnetb3/fold4_ep2.pt --output ../../../intermediate_output/sugawara_efficientnetb3/fold4_test.pkl --n-tta 5 --fold 4 --gpu 0
+logpath: ../../../intermediate_output/sugawara_efficientnetb3/test_fold4.log
+mode: test
+workdir: ../../../intermediate_output/sugawara_efficientnetb3
+fold: 4
+batch size: 28
+acc: 1
+model: efficientnet-b3
+pretrained: imagenet
+not loading optim
+loaded model from ../../../intermediate_output/sugawara_efficientnetb3/fold4_ep2.pt
+dataset_policy: all
+window_policy: 2
+applied dataset_policy all (1074 records)
+use default(random) sampler
+
+
+
+
+
+saved to ../../../intermediate_output/sugawara_efficientnetb3/fold4_test.pkl

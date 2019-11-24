@@ -28,3 +28,45 @@ use default(random) sampler
 [valid] 9/9 3(s) eta:0(s) loss:0.383759 loss200:0.383759 lr:0.00e+00 auc:0.5967 micro:0.6544 macro:0.5390
 0.331527 [0.392312 0.234369 0.285555 0.357881 0.269653 0.388608]
 saved to ../../../intermediate_output/sugawara_efficientnetb3/fold3_valid.pkl
+
+----- 2019-11-24 09:33:34 -----
+/root/user/project/submit_dir/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/sugawara_efficientnetb3/src/cnn/main.py valid ./conf/model.py --snapshot ../../../intermediate_output/model_base/fold3_ep2.pt --output ../../../intermediate_output/model_base/fold3_valid.pkl --n-tta 5 --fold 3 --gpu 0
+logpath: ../../../intermediate_output/sugawara_efficientnetb3/valid_fold3.log
+mode: valid
+workdir: ../../../intermediate_output/sugawara_efficientnetb3
+fold: 3
+batch size: 28
+acc: 1
+model: efficientnet-b3
+pretrained: imagenet
+loss: BCEWithLogitsLoss
+
+----- 2019-11-24 09:43:59 -----
+/root/user/project/submit_dir/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/sugawara_efficientnetb3/src/cnn/main.py valid ./conf/model.py --snapshot ../../../intermediate_output/sugawara_efficientnetb3/fold3_ep2.pt --output ../../../intermediate_output/sugawara_efficientnetb3/fold3_valid.pkl --n-tta 5 --fold 3 --gpu 0
+logpath: ../../../intermediate_output/sugawara_efficientnetb3/valid_fold3.log
+mode: valid
+workdir: ../../../intermediate_output/sugawara_efficientnetb3
+fold: 3
+batch size: 28
+acc: 1
+model: efficientnet-b3
+pretrained: imagenet
+loss: BCEWithLogitsLoss
+not loading optim
+loaded model from ../../../intermediate_output/sugawara_efficientnetb3/fold3_ep2.pt
+dataset_policy: all
+window_policy: 2
+read dataset (243 records)
+applied dataset_policy all (243 records)
+use default(random) sampler
+[valid] 9/9 4(s) eta:0(s) loss:0.382501 loss200:0.382501 lr:0.00e+00 auc:0.6080 micro:0.6604 macro:0.5555
+0.329978 [0.389076 0.232379 0.282946 0.354122 0.270641 0.391609]
+[valid] 9/9 3(s) eta:0(s) loss:0.387383 loss200:0.387383 lr:0.00e+00 auc:0.5924 micro:0.6488 macro:0.5360
+0.334531 [0.396956 0.237277 0.289583 0.356818 0.270832 0.393299]
+[valid] 9/9 3(s) eta:0(s) loss:0.386711 loss200:0.386711 lr:0.00e+00 auc:0.5549 micro:0.6264 macro:0.4835
+0.333967 [0.396016 0.236919 0.287634 0.355506 0.272279 0.393397]
+[valid] 9/9 3(s) eta:0(s) loss:0.381278 loss200:0.381278 lr:0.00e+00 auc:0.5808 micro:0.6502 macro:0.5115
+0.329295 [0.390988 0.233556 0.283022 0.350577 0.267787 0.388148]
+[valid] 9/9 3(s) eta:0(s) loss:0.383376 loss200:0.383376 lr:0.00e+00 auc:0.5964 micro:0.6541 macro:0.5386
+0.331203 [0.392062 0.233992 0.2851   0.35764  0.269299 0.388263]
+saved to ../../../intermediate_output/sugawara_efficientnetb3/fold3_valid.pkl
