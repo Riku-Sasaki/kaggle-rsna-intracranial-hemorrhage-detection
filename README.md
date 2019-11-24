@@ -39,7 +39,7 @@ sh bin/train.sh
 │  │  │- model_base : appian's base model
 │  │  │- model_1 : ricky's resize 410 model
 │  │  │- model_2 : ricky's second model
-│  │  │- model_3 : ricky's custom labels model
+│  │  │- senet154_customlabels : ricky's custom labels model
 │  │  │- shimacos_models : using adjacent image / label_smoothing / without any prediction 
 │  │  │- sugawara_efficientnetb3 : chenge backbone to efficientnetb3
 │  │  │- model_5
@@ -64,11 +64,11 @@ sh bin/train.sh
    │  │- test.pkl : preprocessed train file (appian's base model)
    │  │- test_raw.pkl : preprocessed test file (appian's base model)
    │  │
-   │  │- train_model_3.pkl : preprocessed train file (ricky's model_3)
-   │  │- train_raw_model_3.pkl : preprocessed train file (ricky's model_3)
-   │  │- train_folds_model_3.pkl : splitted train file (ricky's model_3)
-   │  │- test_model_3.pkl : preprocessed train file (ricky's model_3)
-   │  │- test_raw_model_3.pkl : preprocessed test file (ricky's model_3)
+   │  │- train_senet154_customlabels.pkl : preprocessed train file (ricky's senet154_customlabels)
+   │  │- train_raw_senet154_customlabels.pkl : preprocessed train file (ricky's senet154_customlabels)
+   │  │- train_folds_senet154_customlabels.pkl : splitted train file (ricky's senet154_customlabels)
+   │  │- test_senet154_customlabels.pkl : preprocessed train file (ricky's senet154_customlabels)
+   │  │- test_raw_senet154_customlabels.pkl : preprocessed test file (ricky's senet154_customlabels)
    │  │- other preprocessed files
    │
    │- model_base

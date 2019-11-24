@@ -1,0 +1,115 @@
+
+----- 2019-11-23 11:26:51 -----
+/root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/se_resnext_410/src/cnn/main.py train ./conf/model.py --fold 1 --gpu 0
+logpath: ../../../intermediate_output/se_resnext_410/train_fold1.log
+mode: train
+workdir: ../../../intermediate_output/se_resnext_410
+fold: 1
+batch size: 28
+acc: 1
+model: se_resnext50_32x4d
+pretrained: imagenet
+loss: BCEWithLogitsLoss
+optim: Adam
+dataset_policy: all
+window_policy: 2
+read dataset (819 records)
+applied dataset_policy all (819 records)
+use default(random) sampler
+dataset_policy: all
+window_policy: 2
+read dataset (204 records)
+applied dataset_policy all (204 records)
+use default(random) sampler
+train data: loaded 819 records
+valid data: loaded 204 records
+last_epoch: -1
+apex True
+
+----- epoch 0 -----
+
+----- 2019-11-23 11:30:45 -----
+/root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/se_resnext_410/src/cnn/main.py train ./conf/model.py --fold 1 --gpu 0
+logpath: ../../../intermediate_output/se_resnext_410/train_fold1.log
+mode: train
+workdir: ../../../intermediate_output/se_resnext_410
+fold: 1
+batch size: 28
+acc: 1
+model: se_resnext50_32x4d
+pretrained: imagenet
+loss: BCEWithLogitsLoss
+optim: Adam
+dataset_policy: all
+window_policy: 2
+read dataset (819 records)
+applied dataset_policy all (819 records)
+use default(random) sampler
+dataset_policy: all
+window_policy: 2
+read dataset (204 records)
+applied dataset_policy all (204 records)
+use default(random) sampler
+train data: loaded 819 records
+valid data: loaded 204 records
+last_epoch: -1
+apex True
+
+----- epoch 0 -----
+
+----- 2019-11-23 11:36:06 -----
+/root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/se_resnext_410/src/cnn/main.py train ./conf/model.py --fold 1 --gpu 0
+logpath: ../../../intermediate_output/se_resnext_410/train_fold1.log
+mode: train
+workdir: ../../../intermediate_output/se_resnext_410
+fold: 1
+batch size: 28
+acc: 1
+model: se_resnext50_32x4d
+pretrained: imagenet
+loss: BCEWithLogitsLoss
+optim: Adam
+dataset_policy: all
+window_policy: 2
+read dataset (819 records)
+applied dataset_policy all (819 records)
+use default(random) sampler
+dataset_policy: all
+window_policy: 2
+read dataset (204 records)
+applied dataset_policy all (204 records)
+use default(random) sampler
+train data: loaded 819 records
+valid data: loaded 204 records
+last_epoch: -1
+apex True
+
+----- epoch 0 -----
+
+[train] 29/29 35(s) eta:0(s) loss:0.410395 loss200:0.410395 lr:6.00e-05 auc:0.5884 micro:0.5982 macro:0.5786
+0.351765 [0.368393 0.309642 0.375298 0.32739  0.324636 0.388602]
+
+[valid] 8/8 6(s) eta:0(s) loss:0.337104 lossse_resnext_41037104 lr:0.00e+00 auc:0.7112 micro:0.7301 macro:0.6923
+0.291302 [0.405981 0.106882 0.31377  0.330728 0.161559 0.314211]
+saved model to ../../../intermediate_output/model_1/fold1_ep0.pt
+[best] ep:0 loss:0.3371 score:0.2913
+
+----- epoch 1 -----
+
+[train] 29/29 23(s) eta:0(s) loss:0.192198 loss200:0.192198 lr:4.00e-05 auc:0.8542 micro:0.8719 macro:0.8366
+0.164740 [0.222156 0.10755  0.132185 0.13988se_resnext_410979 0.213273]
+
+[valid] 8/8 2(s) eta:0(s) loss:0.333512 loss200:0.333512 lr:0.00e+00 auc:0.5944 micro:0.6353 macro:0.5536
+0.289918 [0.364379 0.123762 0.350592 0.349165 0.177494 0.299652]
+saved model to ../../../intermediate_output/model_1/fold1_ep1.pt
+[best] ep:1 loss:0.3335 score:0.2899
+
+----- epoch 2 -----
+se_resnext_410
+[train] 29/29 22(s) eta:0(s) loss:0.152098 loss200:0.152098 lr:2.67e-05 auc:0.9354 micro:0.9453 macro:0.9255
+0.130369 [0.167259 0.088028 0.108426 0.114345 0.094559 0.172708]
+
+[valid] 8/8 2(s) eta:0(s) loss:0.309227 loss200:0.309227 lr:0.00e+00 auc:0.7168 micro:0.7486 macro:0.6850
+0.268037 [0.348388 0.111968 0.31808  0.317097 0.158349 0.27399 ]
+saved model to ../../../intermediate_output/model_1/fold1_ep2.pt
+[best] ep:2 loss:0.3092 score:0.2680

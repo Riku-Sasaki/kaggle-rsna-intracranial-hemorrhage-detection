@@ -4,7 +4,7 @@ sh bin/preprocess.sh
 cd ../../../
 
 # ricky's preprocess
-cd models/base_cnn/model_3
+cd models/base_cnn/senet154_customlabels
 sh bin/preprocess.sh
 cd ../../../
 

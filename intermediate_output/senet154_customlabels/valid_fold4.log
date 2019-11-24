@@ -1,0 +1,35 @@
+
+----- 2019-11-23 14:15:43 -----
+/root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/senet154_customlabels/src/cnn/main.py valid ./conf/model.py --snapshot ../../../intermediate_output/senet154_customlabels/fold4_ep2.pt --output ../../../intermediate_output/senet154_customlabels/fold4_valid.pkl --n-tta 5 --fold 4 --gpu 0
+logpath: ../../../intermediate_output/senet154_customlabels/valid_fold4.log
+mode: valid
+workdir: ../../../intermediate_output/senet154_customlabels
+fold: 4
+batch size: 28
+acc: 1
+model: senet154
+pretrained: imagenet
+loss: BCEWithLogitsLoss
+not loading optim
+loaded model from ../../../intermediate_output/senet154_customlabels/fold4_ep2.pt
+dataset_policy: all
+window_policy: 2
+read dataset (171 records)
+applied dataset_policy all (171 records)
+use default(random) sampler
+
+[valid] 7/7 10(s) eta:0(s) loss:0.347962 loss200:0.347962 lr:0.00e+00 auc:0.5046 micro:0.5145 macro:0.4947
+0.236205 [0.412696 0.115959 0.128855 0.151834 0.123854 0.307539]
+
+[valid] 7/7 4(s) eta:0(s) loss:0.362386 loss200:0.362386 lr:0.00e+00 auc:0.4967 micro:0.5130 macro:0.4805
+0.243877 [0.418102 0.124185 0.137039 0.162351 0.135041 0.312323]
+
+[valid] 7/7 4(s) eta:0(s) loss:0.336252 loss200:0.336252 lr:0.00e+00 auc:0.4552 micro:0.4797 macro:0.4308
+0.246495 [0.420036 0.126751 0.144159 0.168576 0.137899 0.308005]
+
+[valid] 7/7 4(s) eta:0(s) loss:0.33720senet154_customlabels00:0.337202 lr:0.00e+00 auc:0.4683 micro:0.4928 macro:0.4438
+0.246867 [0.423969 0.125821 0.144844 0.167477 0.13408  0.307907]
+
+[valid] 7/7 4(s) eta:0(s) loss:0.327957 loss200:0.327957 lr:0.00e+00 auc:0.5138 micro:0.5391 macro:0.4885
+0.230047 [0.390665 0.121515 0.135358 0.155025 0.128655 0.288449]
+saved to ../../../intermediate_output/model_3/fold4_valid.pkl

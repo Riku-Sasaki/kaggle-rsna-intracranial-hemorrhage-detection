@@ -6,17 +6,18 @@ sh bin/train.sh
 sh bin/predict.sh
 cd ../../../
 
-cd models/base_cnn/model_1
+# ricky's model
+cd models/base_cnn/ricky_se_resnext_410
 sh bin/train.sh
 sh bin/predict.sh
 cd ../../../
 
-cd models/base_cnn/model_2
+cd models/base_cnn/ricky_se_resnext101_mixup
 sh bin/train.sh
 sh bin/predict.sh
 cd ../../../
 
-cd models/base_cnn/model_3
+cd models/base_cnn/ricky_senet154_customlabels
 sh bin/train.sh
 sh bin/predict.sh
 cd ../../../
@@ -31,7 +32,7 @@ sh bin/train_003.sh
 sh bin/test_003.sh
 cd ../../../
 
-# sugawarya model
+# sugawarya's model
 cd models/base_cnn/sugawara_efficientnetb3
 sh bin/train.sh
 sh bin/predict.sh
