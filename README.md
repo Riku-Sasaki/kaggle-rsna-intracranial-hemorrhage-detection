@@ -31,8 +31,6 @@ sh bin/train.sh
 ## Directory tree
 ```
 
-│- raw_scripts : raw scripts that we used during the competition
-│
 │
 │- input
 │  │- stage_2_sample_submission.csv : test csv (label columns are filled with 0.5)
