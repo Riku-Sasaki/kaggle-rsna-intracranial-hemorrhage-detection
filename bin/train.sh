@@ -48,8 +48,6 @@ docker run --rm \
     --ipc=host \
     kaggle/pytorch \
     python cnn_stacking_2.py
-
-cd models/first_stacking
 python preprocess_for_sugawara_stacking1.py
 python get_feats_for_first_stacking_sugawara.py
 python lgbm_first_stacking.py
