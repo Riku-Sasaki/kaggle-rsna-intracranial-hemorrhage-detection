@@ -4,11 +4,11 @@ sh bin/preprocess.sh
 cd ../../../
 
 # ricky's preprocess
-cd models/base_cnn/model_3
+cd models/base_cnn/senet154_customlabels
 sh bin/preprocess.sh
 cd ../../../
 
 # shimacos's preprocess
-cd models/base_cnn/model_4-6
+cd models/base_cnn/shimacos_models
 sh bin/preprocess.sh
 cd ../../../

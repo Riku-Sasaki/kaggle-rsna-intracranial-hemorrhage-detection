@@ -372,9 +372,9 @@ if __name__ == "__main__":
         #  'seresnext50_label_smoothing_without_any',
         "seresnext50_label_smoothing_for_sugawara_stacking",
         #  'seresnext50_label_smoothing',
-        "model_3",
-        "model_2",
-        "model_1",
+        "senet154_customlabels",
+        "se_resnext101_mixup",
+        "se_resnext_410",
         "model_base",
         "densenet_adj_prediction_for_sugawara_stacking",
     ]

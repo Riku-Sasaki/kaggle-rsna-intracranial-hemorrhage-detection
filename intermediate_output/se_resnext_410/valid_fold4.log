@@ -1,0 +1,63 @@
+
+----- 2019-11-23 11:50:24 -----
+/root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/se_resnext_410/src/cnn/main.py valid ./conf/model.py --snapshot ../../../intermediate_output/se_resnext_410/fold4_ep2.pt --output ../../../intermediate_output/se_resnext_410/fold4_valid.pkl --n-tta 5 --fold 4 --gpu 0
+logpath: ../../../intermediate_output/se_resnext_410/valid_fold4.log
+mode: valid
+workdir: ../../../intermediate_output/se_resnext_410
+fold: 4
+batch size: 28
+acc: 1
+model: se_resnext50_32x4d
+pretrained: imagenet
+loss: BCEWithLogitsLoss
+not loading optim
+loaded model from ../../../intermediate_output/se_resnext_410/fold4_ep2.pt
+dataset_policy: all
+window_policy: 2
+read dataset (171 records)
+applied dataset_policy all (171 records)
+use default(random) sampler
+
+[valid] 7/7 7(s) eta:0(s) loss:0.185574 loss200:0.185574 lr:0.00e+00 auc:0.4980 micro:0.5072 macro:0.4888
+0.166936 [0.232398 0.120959 0.130247 0.137511 0.124019 0.191019]
+
+[valid] 7/7 2(s) eta:0(s) loss:0.185777 loss200:0.185777 lr:0.00e+00 auc:0.4739 micro:0.4820 macro:0.4658
+0.170180 [0.241334 0.119597 0.130468 0.136555 0.12414  0.197832]
+
+[valid] 7/7 2(s) eta:0(s) loss:0.193733 loss200:0.193733 lr:0.00e+00 auc:0.4266 micro:0.4276 macro:0.4256
+0.175816 [0.252845 0.12069  0.132605 0.139309 0.126352 0.206066]se_resnext_410se_resnext_410se_resnext_410
+se_resnext_410
+----- 2019-11-23 11:54:15 -----
+/root/user/project/kaggle-rsna-intracrse_resnext_410emorrhage-detection/models/base_cnn/model_1/src/cnn/main.py valid ./conf/model.py --snapshot ../../../intermediate_output/model_1/fold4_ep2.pt --output ../../../intermediate_output/model_1/fold4_valid.pkl --n-tta 5 --fold 4 --gpu 0
+logpath: ../../../intermediate_output/model_1/valid_fold4.log
+mode: valid
+workdir: ../../../intermediate_output/model_1
+fold: 4
+batch size: 28
+acc: 1
+model: se_resnext50_32x4d
+pretrained: imagenetse_resnext_410
+loss: BCEWithLogitsLoss
+not loading optim
+loaded model from ../../../intermediate_output/model_1/fold4_ep2.pt
+dataset_policy: all
+window_policy: 2
+read dataset (171 records)
+applied dataset_policy all (171 records)
+use default(random) sampler
+
+[valid] 7/7 7(s) eta:0(s) loss:0.185574 loss200:0.185574 lr:0.00e+00 auc:0.4980 micro:0.5072 macro:0.4888
+0.166936 [0.232398 0.120959 0.130247 0.137511 0.124019 0.191019]
+
+[valid] 7/7 2(s) eta:0(s) loss:0.185777 loss200:0.185777 lr:0.00e+00 auc:0.4739 micro:0.4820 macro:0.4658
+0.170180 [0.241334 0.119597 0.130468 0.136555 0.12414  0.197832]
+
+[valid] 7/7 2(s) eta:0(s) loss:0.19373se_resnext_41000:0.193733 lr:0.00e+00 auc:0.4266 micro:0.4276 macro:0.4256
+0.175816 [0.252845 0.12069  0.132605 0.139309 0.126352 0.206066]
+
+[valid] 7/7 2(s) eta:0(s) loss:0.194540 loss200:0.194540 lr:0.00e+00 auc:0.5229 micro:0.5353 macro:0.5106
+0.168451 [0.239678 0.11766  0.129788 0.136818 0.12338  0.192158]
+
+[valid] 7/7 2(s) eta:0(s) loss:0.195161 loss200:0.195161 lr:0.00e+00 auc:0.4842 micro:0.4928 macro:0.4757
+0.169117 [0.233545 0.121292 0.13407  0.139269 0.12695  0.195148]
+saved to ../../../intermediate_output/model_1/fold4_valid.pkl

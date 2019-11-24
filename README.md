@@ -37,11 +37,11 @@ sh bin/train.sh
 │- models
 │  │- base_cnn : base CNN models
 │  │  │- model_base : appian's base model
-│  │  │- model_1 : ricky's resize 410 model
-│  │  │- model_2 : ricky's second model
-│  │  │- model_3 : ricky's custom labels model
-│  │  │- model_4-6 : shimacosh's models
-│  │  │- sugawara_efficientnetb3 : sugawarya's model
+│  │  │- ricky_se_resnext_410 : resize 410 model
+│  │  │- ricky_se_resnext101_mixup : chenge backbone to se_resnext101 and use mixup
+│  │  │- ricky_senet154_customlabels : custom labels model
+│  │  │- shimacos_models : using adjacent image / label_smoothing / without any prediction 
+│  │  │- sugawara_efficientnetb3 : chenge backbone to efficientnetb3
 │  │  │- model_5
 │  │  │- model_6
 │  │  │- model_7
@@ -64,11 +64,11 @@ sh bin/train.sh
    │  │- test.pkl : preprocessed train file (appian's base model)
    │  │- test_raw.pkl : preprocessed test file (appian's base model)
    │  │
-   │  │- train_model_3.pkl : preprocessed train file (ricky's model_3)
-   │  │- train_raw_model_3.pkl : preprocessed train file (ricky's model_3)
-   │  │- train_folds_model_3.pkl : splitted train file (ricky's model_3)
-   │  │- test_model_3.pkl : preprocessed train file (ricky's model_3)
-   │  │- test_raw_model_3.pkl : preprocessed test file (ricky's model_3)
+   │  │- train_senet154_customlabels.pkl : preprocessed train file (ricky's senet154_customlabels)
+   │  │- train_raw_senet154_customlabels.pkl : preprocessed train file (ricky's senet154_customlabels)
+   │  │- train_folds_senet154_customlabels.pkl : splitted train file (ricky's senet154_customlabels)
+   │  │- test_senet154_customlabels.pkl : preprocessed train file (ricky's senet154_customlabels)
+   │  │- test_raw_senet154_customlabels.pkl : preprocessed test file (ricky's senet154_customlabels)
    │  │- other preprocessed files
    │
    │- model_base
@@ -78,14 +78,14 @@ sh bin/train.sh
    │  │- log files
    │  │- tmp files
    │
-   │- model_1
+   │- ricky_se_resnext_410
    │  │- fold{0-4}_test.pkl
    │  │- fold{0-4}_valid.pkl
    │  │- weight files
    │  │- log files
    │  │- tmp files
    │
-   │- model_2
+   │- ricky_se_resnext101_mixup
    │  │- ...
    │
    │- ...
@@ -101,8 +101,7 @@ sh bin/train.sh
    │
    │- ...
    │
-   │- lgbm_second_stacking
-      │- fold{0-4}_test.pkl
-      │- fold{0-4}_valid.pkl
-      │- tmp files
+   │- stacking2nd_lgbm
+      │- pred_test.pkl
+      │- pred_valid.pkl
 ```

@@ -1,0 +1,23 @@
+
+----- 2019-11-23 14:10:55 -----
+/root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/senet154_customlabels/src/cnn/main.py test ./conf/model.py --snapshot ../../../intermediate_output/senet154_customlabels/fold3_ep2.pt --output ../../../intermediate_output/senet154_customlabels/fold3_test.pkl --n-tta 5 --fold 3 --gpu 0
+logpath: ../../../intermediate_output/senet154_customlabels/test_fold3.log
+mode: test
+workdir: ../../../intermediate_output/senet154_customlabels
+fold: 3
+batch size: 28
+acc: 1
+model: senet154
+pretrained: imagenet
+not loading optim
+loaded model from ../../../intermediate_output/senet154_customlabels/fold3_ep2.pt
+dataset_policy: all
+window_policy: 2
+applied dataset_policy all (1074 records)
+use default(random) sampler
+
+
+
+
+
+saved to ../../../intermediate_output/senet154_customlabels/fold3_test.pkl

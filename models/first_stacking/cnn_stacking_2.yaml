@@ -6,7 +6,7 @@ model_names: [
         "seresnext50_label_smoothing",
         "seresnext50_label_smoothing_without_any",
         "model_base",
-        "model_1",
-        "model_2",
-        "model_3",
+        "se_resnext_410",
+        "se_resnext101_mixup",
+        "senet154_customlabels",
     ]

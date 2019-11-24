@@ -1,51 +1,0 @@
-
------ 2019-11-23 12:19:33 -----
-/root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_2/src/cnn/main.py train ./conf/model.py --fold 1 --gpu 0
-logpath: ../../../intermediate_output/model_2/train_fold1.log
-mode: train
-workdir: ../../../intermediate_output/model_2
-fold: 1
-batch size: 28
-acc: 1
-model: se_resnext101_32x4d
-pretrained: imagenet
-loss: BCEWithLogitsLoss
-optim: Adam
-dataset_policy: all
-window_policy: 2
-read dataset (819 records)
-applied dataset_policy all (819 records)
-use default(random) sampler
-dataset_policy: all
-window_policy: 2
-read dataset (204 records)
-applied dataset_policy all (204 records)
-use default(random) sampler
-train data: loaded 819 records
-valid data: loaded 204 records
-last_epoch: -1
-apex True
-
------ epoch 0 -----
-[train] 29/29 46(s) eta:0(s) loss:0.368967 loss200:0.368967 lr:6.00e-05 auc:0.5936 micro:0.6093 macro:0.5779
-0.317871 [0.366218 0.25975  0.262443 0.333773 0.273341 0.363352]
-[valid] 8/8 6(s) eta:0(s) loss:0.376172 loss200:0.376172 lr:0.00e+00 auc:0.7303 micro:0.7559 macro:0.7046
-0.328261 [0.422958 0.109786 0.394988 0.420404 0.187384 0.339351]
-saved model to ../../../intermediate_output/model_2/fold1_ep0.pt
-[best] ep:0 loss:0.3762 score:0.3283
-
------ epoch 1 -----
-[train] 29/29 37(s) eta:0(s) loss:0.186316 loss200:0.186316 lr:4.00e-05 auc:0.7677 micro:0.7908 macro:0.7447
-0.171819 [0.24781  0.102258 0.125245 0.152719 0.110179 0.216711]
-[valid] 8/8 3(s) eta:0(s) loss:0.298043 loss200:0.298043 lr:0.00e+00 auc:0.6816 micro:0.7163 macro:0.6470
-0.259445 [0.308567 0.121727 0.33742  0.341684 0.153222 0.244928]
-saved model to ../../../intermediate_output/model_2/fold1_ep1.pt
-[best] ep:1 loss:0.2980 score:0.2594
-
------ epoch 2 -----
-[train] 29/29 37(s) eta:0(s) loss:0.143719 loss200:0.143719 lr:2.67e-05 auc:0.9156 micro:0.9248 macro:0.9064
-0.123982 [0.162149 0.07981  0.100775 0.120336 0.087533 0.155125]
-[valid] 8/8 3(s) eta:0(s) loss:0.312666 loss200:0.312666 lr:0.00e+00 auc:0.6971 micro:0.7341 macro:0.6602
-0.265351 [0.31687  0.120089 0.353815 0.34955  0.164333 0.235931]
-saved model to ../../../intermediate_output/model_2/fold1_ep2.pt
-[best] ep:1 loss:0.2980 score:0.2594

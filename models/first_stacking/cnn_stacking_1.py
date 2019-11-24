@@ -158,9 +158,9 @@ def make_dataset(path_to_train_raw="intermediate_output/preprocessed_data/train_
     # define model names
     models = [
           'model_base',
-          'model_1',
-          'model_2',
-          'model_3',
+          'se_resnext_410',
+          'se_resnext101_mixup',
+          'senet154_customlabels',
           'model_4',
           'model_5',
           'model_6',
@@ -183,7 +183,7 @@ def make_dataset(path_to_train_raw="intermediate_output/preprocessed_data/train_
             tmp["ID"] = df[0]["ids"]
             target = df[0]["targets"]
             tmp["folds"] = n_fold
-            if model == "model_3":
+            if model == "senet154_customlabels":
                 target[target<0.5] = 0
             tmp2 = pd.DataFrame(target)
             tmp2.columns = [tar_col + "_true" for tar_col in target_cols]
@@ -455,9 +455,9 @@ def cnn_stacking(df_all, test_list):
     # define model names
     models = [
           'model_base',
-          'model_1',
-          'model_2',
-          'model_3',
+          'se_resnext_410',
+          'se_resnext101_mixup',
+          'senet154_customlabels',
           'model_4',
           'model_5',
           'model_6',

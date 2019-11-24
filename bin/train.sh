@@ -6,23 +6,24 @@ sh bin/train.sh
 sh bin/predict.sh
 cd ../../../
 
-cd models/base_cnn/model_1
+# ricky's model
+cd models/base_cnn/ricky_se_resnext_410
 sh bin/train.sh
 sh bin/predict.sh
 cd ../../../
 
-cd models/base_cnn/model_2
+cd models/base_cnn/ricky_se_resnext101_mixup
 sh bin/train.sh
 sh bin/predict.sh
 cd ../../../
 
-cd models/base_cnn/model_3
+cd models/base_cnn/ricky_senet154_customlabels
 sh bin/train.sh
 sh bin/predict.sh
 cd ../../../
 
 # shimacos's model
-cd models/base_cnn/model_4-6
+cd models/base_cnn/shimacos_models
 sh bin/train_001.sh
 sh bin/test_001.sh
 sh bin/train_002.sh
@@ -31,7 +32,7 @@ sh bin/train_003.sh
 sh bin/test_003.sh
 cd ../../../
 
-# sugawarya model
+# sugawarya's model
 cd models/base_cnn/sugawara_efficientnetb3
 sh bin/train.sh
 sh bin/predict.sh
@@ -63,7 +64,4 @@ cd models/second_stacking
 sh ./bin/stacking.sh
 
 # make submission
-test=../../intermediate_output/stacking2nd_lgbm/pred_test.pkl
-sub=../../output/submission.csv
-clip=1e-6
-python -m make_submission --input ${test} --output ${sub} --clip ${clip}
+sh ./bin/submission.sh
