@@ -1,5 +1,7 @@
 # kaggle-rsna-intracranial-hemorrhage-detection 10th place solution
 
+- This is the project for RSNA Intracranial Hemorrhage Detection hosted on Kaggle in 2019.
+
 ## Pipeline
 
 ![](./fig/RSNA_pipeline.png)
