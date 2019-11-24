@@ -1,18 +1,32 @@
-model=model001_se_resnext_stage2
-gpu=3
-fold=3
+model=model
+modelname=2kyym_inceptionv4
+gpu=0
 ep=2
 tta=5
 clip=1e-6
 conf=./conf/${model}.py
 
-snapshot=./model/${model}/fold${fold}_ep${ep}.pt
-valid=./model/${model}/fold${fold}_ep${ep}_valid_tta${tta}.pkl
-test=./model/${model}/fold${fold}_ep${ep}_test_tta${tta}.pkl
-sub=./data/submission/${model}_fold${fold}_ep${ep}_test_tta${tta}.csv
-
-python -m src.cnn.main test ${conf} --snapshot ${snapshot} --output ${test} --n-tta ${tta} --fold ${fold} --gpu ${gpu}
-#python -m src.cnn.main valid ${conf} --snapshot ${snapshot} --output ${valid} --n-tta ${tta} --fold ${fold} --gpu ${gpu}
-python -m src.postprocess.make_submission --input ${test} --output ${sub} --clip ${clip}
-#kaggle competitions submit rsna-intracranial-hemorrhage-detection -m "" -f ./data/submission/${sub}
-
+for fold in 0 1 2 3 4
+do
+snapshot=./intermediate_output/${modelname}/fold${fold}_ep${ep}.pt
+valid=./intermediate_output/${modelname}/fold${fold}_valid.pkl
+test=./intermediate_output/${modelname}/fold${fold}_test.pkl
+docker run --rm \
+    -v $PWD/:/root/ \
+    -v $PWD/../../../intermediate_output/:/root/intermediate_output/ \
+    -v $PWD/../../../input/:/root/input/ \
+    -v $HOME/.cache/:/root/.cache \
+    --runtime=nvidia \
+    --ipc=host \
+    kaggle/rsna \
+    python -m src.cnn.main test ${conf} --snapshot ${snapshot} --output ${test} --n-tta ${tta} --fold ${fold} --gpu ${gpu}
+docker run --rm \
+    -v $PWD/:/root/ \
+    -v $PWD/../../../intermediate_output/:/root/intermediate_output/ \
+    -v $PWD/../../../input/:/root/input/ \
+    -v $HOME/.cache/:/root/.cache \
+    --runtime=nvidia \
+    --ipc=host \
+    kaggle/rsna \
+    python -m src.cnn.main valid ${conf} --snapshot ${snapshot} --output ${valid} --n-tta ${tta} --fold ${fold} --gpu ${gpu}
+done

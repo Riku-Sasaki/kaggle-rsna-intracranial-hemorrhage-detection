@@ -7,7 +7,7 @@ epoch = 3
 #resume_from = "./model/model001/fold3_ep1.pt"
 resume_from = None
 
-batch_size = 28
+batch_size = 16
 num_workers = 8
 imgsize = (320, 320) #(height, width)
 

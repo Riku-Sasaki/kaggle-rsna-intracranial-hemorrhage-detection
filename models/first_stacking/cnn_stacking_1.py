@@ -1,7 +1,7 @@
 """
 written by ricky
 """
-
+import os
 import pickle
 from tqdm import tqdm
 
@@ -9,7 +9,6 @@ import pandas as pd
 import numpy as np
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
 from sklearn.metrics import log_loss
@@ -161,9 +160,9 @@ def make_dataset(path_to_train_raw="intermediate_output/preprocessed_data/train_
           'se_resnext_410',
           'se_resnext101_mixup',
           'senet154_customlabels',
-          'model_4',
-          'model_5',
-          'model_6',
+          '2kyym_inception_resnet_v2',
+          '2kyym_inceptionv4',
+          '2kyym_xception',
           "sugawara_efficientnetb3",
          ]
 
@@ -355,6 +354,7 @@ def make_dataset(path_to_train_raw="intermediate_output/preprocessed_data/train_
 
     if save_data:
         # save aggregated data
+        os.makedirs('intermediate_output/cnn_stacking_1', exist_ok=True)
         with open("intermediate_output/cnn_stacking_1/df_all_preprcessed_8models.pkl", "wb") as f:
             pickle.dump(df_all, f, protocol=4)
         with open("intermediate_output/cnn_stacking_1/test_list_preprocessed_8models.pkl", "wb") as f:
