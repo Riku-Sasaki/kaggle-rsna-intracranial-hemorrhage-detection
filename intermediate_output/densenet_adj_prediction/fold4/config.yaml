@@ -1,0 +1,97 @@
+!!python/object/new:config.EasyDict
+dictitems:
+  base: &id002 !!python/object/new:config.EasyDict
+    dictitems:
+      gpu_id: &id001
+      - '0'
+      - '1'
+      loss_name: weighted_binary_cross_entropy
+      opt_name: adam
+      scheduler_name: warmup_scheduler
+      yaml: 001_adjmodel_densenet
+    state:
+      gpu_id: *id001
+      loss_name: weighted_binary_cross_entropy
+      opt_name: adam
+      scheduler_name: warmup_scheduler
+      yaml: 001_adjmodel_densenet
+  data: &id003 !!python/object/new:config.EasyDict
+    dictitems:
+      crop_width: 512
+      dataset_name: adj_dataset
+      fold: 4
+      image_size: 512
+      is_multi_channel: false
+      is_std: false
+      is_train: false
+      use_smooth_label: false
+      window_aug: true
+      window_policy: 2
+    state:
+      crop_width: 512
+      dataset_name: adj_dataset
+      fold: 4
+      image_size: 512
+      is_multi_channel: false
+      is_std: false
+      is_train: false
+      use_smooth_label: false
+      window_aug: true
+      window_policy: 2
+  model: &id004 !!python/object/new:config.EasyDict
+    dictitems:
+      adj_model: true
+      branch_head: false
+      classes: 6
+      is_multi_channel: false
+      is_pretrained: true
+      is_window: false
+      model_name: densenet
+    state:
+      adj_model: true
+      branch_head: false
+      classes: 6
+      is_multi_channel: false
+      is_pretrained: true
+      is_window: false
+      model_name: densenet
+  save: &id005 !!python/object/new:config.EasyDict
+    dictitems:
+      description: 512x512 image, densenet, binary_cross_entropy, img_{i-1} img_{i}
+        img_{i+1} for input
+      save_path: ./intermediate_output/densenet_adj_prediction
+    state:
+      description: 512x512 image, densenet, binary_cross_entropy, img_{i-1} img_{i}
+        img_{i+1} for input
+      save_path: ./intermediate_output/densenet_adj_prediction
+  test: &id006 !!python/object/new:config.EasyDict
+    dictitems:
+      batch_size: 32
+      is_tta: true
+      is_validation: false
+    state:
+      batch_size: 32
+      is_tta: true
+      is_validation: false
+  train: &id007 !!python/object/new:config.EasyDict
+    dictitems:
+      accumulation_steps: 1
+      batch_size: 16
+      epoch: 3
+      learning_rate: 1.0e-05
+      seed: 7777
+      warm_start: true
+    state:
+      accumulation_steps: 1
+      batch_size: 16
+      epoch: 3
+      learning_rate: 1.0e-05
+      seed: 7777
+      warm_start: true
+state:
+  base: *id002
+  data: *id003
+  model: *id004
+  save: *id005
+  test: *id006
+  train: *id007
