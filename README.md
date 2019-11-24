@@ -8,7 +8,7 @@ directories
 │
 │
 │- input
-│  │- stage_2_sample_submission.csv : test csv without predicted labels
+│  │- stage_2_sample_submission.csv : test csv (label columns are filled with 0.5)
 │  │- stage_2_train.csv : train csv
 │  │
 │  │- stage_2_train_images
@@ -22,9 +22,9 @@ directories
 │  │- submission.csv : predicted test csv
 │
 │
-│- bin
-│  │- preprocess.sh : model_base(appian's model)内のpreprocessを実行 -> 追加で各々の
-│  │- train.sh : baseのcnnを直列train+predict -> first stacking直列 -> second stacking
+│- bin : main file
+│  │- preprocess.sh
+│  │- train.sh
 │
 │
 │- models
@@ -33,14 +33,11 @@ directories
 │  │  │- model_1 : ricky's resize 410 model
 │  │  │- model_2 : ricky's second model
 │  │  │- model_3 : ricky's custom labels model
-│  │  │- model_4
+│  │  │- model_4-6 : shimacosh's models
+│  │  │- sugawara_efficientnetb3 : sugawarya's model
 │  │  │- model_5
 │  │  │- model_6
 │  │  │- model_7
-│  │  │- model_8
-│  │  │- model_9
-│  │  │- model_10
-│  │  │- ...
 │  │
 │  │- first_stacking : first level stacking models
 │  │  │- cnn_stacking_1.py (ricky)
