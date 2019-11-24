@@ -37,6 +37,27 @@ sh bin/train.sh
 sh bin/predict.sh
 cd ../../../
 
+# 2kyym model
+cd models/base_cnn/2kyym_se_resnext
+sh bin/train.sh
+sh bin/predict.sh
+cd ../../../
+
+cd models/base_cnn/2kyym_inceptionv4
+sh bin/train.sh
+sh bin/predict.sh
+cd ../../../
+
+cd models/base_cnn/2kyym_inception_resnet_v2
+sh bin/train.sh
+sh bin/predict.sh
+cd ../../../
+
+cd models/base_cnn/2kyym_xception
+sh bin/train.sh
+sh bin/predict.sh
+cd ../../../
+
 # 1st stacking training
 cd models/first_stacking
 sh ./bin/stacking.sh
