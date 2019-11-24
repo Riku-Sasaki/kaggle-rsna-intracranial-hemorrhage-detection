@@ -6,7 +6,10 @@
 
 ## usage
 ```
+# prepare docker image
 sh bin/build_image.sh
+
+# 5-fold aplit / delete some noise / metadata extraction from dicom
 sh bin/preprocess.sh
 
 # If you want to run all scripts (take a long time)
