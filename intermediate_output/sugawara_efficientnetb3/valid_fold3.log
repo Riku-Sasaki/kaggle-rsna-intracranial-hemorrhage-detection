@@ -1,0 +1,30 @@
+
+----- 2019-11-24 03:38:09 -----
+/root/user/project/submit_dir/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/sugawara_efficientnetb3/src/cnn/main.py valid ./conf/sugawara_efficientnetb3.py --snapshot ../../../intermediate_output/sugawara_efficientnetb3/fold3_ep2.pt --output ../../../intermediate_output/sugawara_efficientnetb3/fold3_valid.pkl --n-tta 5 --fold 3 --gpu 0
+logpath: ../../../intermediate_output/sugawara_efficientnetb3/valid_fold3.log
+mode: valid
+workdir: ../../../intermediate_output/sugawara_efficientnetb3
+fold: 3
+batch size: 28
+acc: 1
+model: efficientnet-b3
+pretrained: imagenet
+loss: BCEWithLogitsLoss
+not loading optim
+loaded model from ../../../intermediate_output/sugawara_efficientnetb3/fold3_ep2.pt
+dataset_policy: all
+window_policy: 2
+read dataset (243 records)
+applied dataset_policy all (243 records)
+use default(random) sampler
+[valid] 9/9 5(s) eta:0(s) loss:0.382884 loss200:0.382884 lr:0.00e+00 auc:0.6081 micro:0.6604 macro:0.5559
+0.330301 [0.389334 0.232744 0.283386 0.354368 0.270992 0.391946]
+[valid] 9/9 3(s) eta:0(s) loss:0.387755 loss200:0.387755 lr:0.00e+00 auc:0.5929 micro:0.6492 macro:0.5366
+0.334845 [0.397196 0.237643 0.29002  0.357047 0.271174 0.393642]
+[valid] 9/9 3(s) eta:0(s) loss:0.387094 loss200:0.387094 lr:0.00e+00 auc:0.5553 micro:0.6267 macro:0.4839
+0.334292 [0.396276 0.23729  0.288082 0.355747 0.272626 0.393749]
+[valid] 9/9 3(s) eta:0(s) loss:0.381645 loss200:0.381645 lr:0.00e+00 auc:0.5812 micro:0.6505 macro:0.5119
+0.329606 [0.391239 0.233906 0.283443 0.35081  0.268115 0.388493]
+[valid] 9/9 3(s) eta:0(s) loss:0.383759 loss200:0.383759 lr:0.00e+00 auc:0.5967 micro:0.6544 macro:0.5390
+0.331527 [0.392312 0.234369 0.285555 0.357881 0.269653 0.388608]
+saved to ../../../intermediate_output/sugawara_efficientnetb3/fold3_valid.pkl

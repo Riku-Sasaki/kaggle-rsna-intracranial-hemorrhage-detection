@@ -44,10 +44,10 @@ def get_model(cfg):
     log(f'model: {cfg.model.name}')
     log(f'pretrained: {cfg.model.pretrained}')
 
-    if cfg.model.name in ['resnext101_32x8d_wsl']:
-        model = torch.hub.load('facebookresearch/WSL-Images', cfg.model.name)
-        model.fc = torch.nn.Linear(2048, cfg.model.n_output)
-        return model
+#     if cfg.model.name in ['resnext101_32x8d_wsl']:
+#         model = torch.hub.load('facebookresearch/WSL-Images', cfg.model.name)
+#         model.fc = torch.nn.Linear(2048, cfg.model.n_output)
+#         return model
     if 'efficient' in cfg.model.name:
         model = EfficientNet.from_pretrained(cfg.model.name)
         if 'b5' in cfg.model.name:
@@ -62,17 +62,17 @@ def get_model(cfg):
             model._fc = torch.nn.Linear(1280, cfg.model.n_output)
         elif 'b0' in cfg.model.name:
             model._fc = torch.nn.Linear(1280, cfg.model.n_output)
-    try:
-        model_func = pretrainedmodels.__dict__[cfg.model.name]
-    except KeyError as e:
-        model_func = eval(cfg.model.name)
+#     try:
+#         model_func = pretrainedmodels.__dict__[cfg.model.name]
+#     except KeyError as e:
+#         model_func = eval(cfg.model.name)
 
-    model = model_func(num_classes=1000, pretrained=cfg.model.pretrained)
-    model.avg_pool = nn.AdaptiveAvgPool2d(1)
-    model.last_linear = nn.Linear(
-        model.last_linear.in_features,
-        cfg.model.n_output,
-    )
+#     model = model_func(num_classes=1000, pretrained=cfg.model.pretrained)
+#     model.avg_pool = nn.AdaptiveAvgPool2d(1)
+#     model.last_linear = nn.Linear(
+#         model.last_linear.in_features,
+#         cfg.model.n_output,
+#     )
     return model
 
 

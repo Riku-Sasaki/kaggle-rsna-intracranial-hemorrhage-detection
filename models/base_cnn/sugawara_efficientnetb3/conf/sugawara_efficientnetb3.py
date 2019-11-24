@@ -23,7 +23,7 @@ optim = dict(
 )
 
 model = dict(
-    name='efficientnetb3',
+    name='efficientnet-b3',
     pretrained="imagenet",
     n_output=6,
 )
