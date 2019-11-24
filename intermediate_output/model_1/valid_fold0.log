@@ -1,6 +1,11 @@
 
+<<<<<<< HEAD
 ----- 2019-11-23 20:04:22 -----
 /root/user/project/submit_dir/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_1/src/cnn/main.py valid ./conf/model.py --snapshot ../../../intermediate_output/model_1/fold0_ep2.pt --output ../../../intermediate_output/model_1/fold0_valid.pkl --n-tta 5 --fold 0 --gpu 0
+=======
+----- 2019-11-23 11:44:20 -----
+/root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_1/src/cnn/main.py valid ./conf/model.py --snapshot ../../../intermediate_output/model_1/fold0_ep2.pt --output ../../../intermediate_output/model_1/fold0_valid.pkl --n-tta 5 --fold 0 --gpu 0
+>>>>>>> origin
 logpath: ../../../intermediate_output/model_1/valid_fold0.log
 mode: valid
 workdir: ../../../intermediate_output/model_1
@@ -17,6 +22,7 @@ window_policy: 2
 read dataset (172 records)
 applied dataset_policy all (172 records)
 use default(random) sampler
+<<<<<<< HEAD
 [valid] 7/7 6(s) eta:0(s) loss:0.259085 loss200:0.259085 lr:0.00e+00 auc:0.6338 micro:0.6625 macro:0.6052
 0.208859 [0.316987 0.115624 0.244326 0.1388   0.111677 0.217612]
 [valid] 7/7 2(s) eta:0(s) loss:0.275242 loss200:0.275242 lr:0.00e+00 auc:0.6282 micro:0.6587 macro:0.5976
@@ -27,4 +33,16 @@ use default(random) sampler
 0.202151 [0.295008 0.114765 0.242854 0.137683 0.114508 0.215231]
 [valid] 7/7 2(s) eta:0(s) loss:0.278313 loss200:0.278313 lr:0.00e+00 auc:0.6326 micro:0.6642 macro:0.6009
 0.211896 [0.319758 0.114269 0.245469 0.142375 0.113682 0.227958]
+=======
+[valid] 7/7 8(s) eta:0(s) loss:0.257589 loss200:0.257589 lr:0.00e+00 auc:0.6411 micro:0.6687 macro:0.6135
+0.208082 [0.315037 0.114976 0.242762 0.137834 0.111517 0.219409]
+[valid] 7/7 2(s) eta:0(s) loss:0.273527 loss200:0.273527 lr:0.00e+00 auc:0.6403 micro:0.6703 macro:0.6103
+0.209755 [0.317322 0.115106 0.245631 0.134085 0.111747 0.227072]
+[valid] 7/7 2(s) eta:0(s) loss:0.250013 loss200:0.250013 lr:0.00e+00 auc:0.6362 micro:0.6723 macro:0.6001
+0.206053 [0.303828 0.115249 0.242513 0.140991 0.113285 0.222676]
+[valid] 7/7 2(s) eta:0(s) loss:0.257406 loss200:0.257406 lr:0.00e+00 auc:0.6484 micro:0.6877 macro:0.6091
+0.201715 [0.293105 0.114844 0.241333 0.138339 0.114513 0.216762]
+[valid] 7/7 2(s) eta:0(s) loss:0.277515 loss200:0.277515 lr:0.00e+00 auc:0.6339 micro:0.6661 macro:0.6018
+0.211459 [0.317731 0.11441  0.24383  0.143059 0.11385  0.229604]
+>>>>>>> origin
 saved to ../../../intermediate_output/model_1/fold0_valid.pkl

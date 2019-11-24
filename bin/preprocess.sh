@@ -7,3 +7,8 @@ cd ../../../
 cd models/base_cnn/model_3
 sh bin/preprocess.sh
 cd ../../../
+
+# shimacos's preprocess
+cd models/base_cnn/seresnext50_label_smoothing
+sh bin/preprocess.sh
+cd ../../../

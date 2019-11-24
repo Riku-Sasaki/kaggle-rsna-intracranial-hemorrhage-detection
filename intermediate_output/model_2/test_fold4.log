@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 ----- 2019-11-23 20:36:52 -----
 /root/user/project/submit_dir/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_2/src/cnn/main.py test ./conf/model.py --snapshot ../../../intermediate_output/model_2/fold4_ep2.pt --output ../../../intermediate_output/modelmodel_2_base/fold4_test.pkl --n-tta 5 --fold 4 --gpu 0
 logpath: ../../../intermediate_output/model_2/test_fold4.log
@@ -23,6 +24,10 @@ use default(random) sampler
 
 ----- 2019-11-24 04:23:29 -----
 /root/user/project/submit_dir/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_2/src/cnn/main.py test ./conf/model.py --snapshot ../../../intermediate_output/model_2/fold4_ep2.pt --output ../../../intermediate_output/model_2/fold4_test.pkl --n-tta 5 --fold 4 --gpu 0
+=======
+----- 2019-11-23 13:14:20 -----
+/root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_2/src/cnn/main.py test ./conf/model.py --snapshot ../../../intermediate_output/model_2/fold4_ep2.pt --output ../../../intermediate_output/model_2/fold4_test.pkl --n-tta 5 --fold 4 --gpu 0
+>>>>>>> origin
 logpath: ../../../intermediate_output/model_2/test_fold4.log
 mode: test
 workdir: ../../../intermediate_output/model_2
