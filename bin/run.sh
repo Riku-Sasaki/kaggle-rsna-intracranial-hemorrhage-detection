@@ -65,3 +65,4 @@ sh ./bin/stacking.sh
 
 # make submission
 sh ./bin/submission.sh
+cd ../../
