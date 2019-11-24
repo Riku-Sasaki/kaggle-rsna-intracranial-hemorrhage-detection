@@ -38,7 +38,7 @@ sh bin/train.sh
 sh bin/predict.sh
 cd ../../../
 
-# 2kyym model
+# 2kyym's model
 cd models/base_cnn/2kyym_inceptionv4
 sh bin/train.sh
 sh bin/predict.sh
