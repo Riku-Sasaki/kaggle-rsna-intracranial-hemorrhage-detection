@@ -45,7 +45,6 @@ cd ../../
 # 2nd stacking training
 cd models/second_stacking
 sh ./bin/stacking.sh
-cd ../../
 
 # make submission
 test=../../intermediate_output/stacking2nd_lgbm/pred_test.pkl
