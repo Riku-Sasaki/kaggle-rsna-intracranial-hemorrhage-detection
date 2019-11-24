@@ -40,8 +40,8 @@ sh bin/train.sh
 │  │  │- model_1 : ricky's resize 410 model
 │  │  │- model_2 : ricky's second model
 │  │  │- model_3 : ricky's custom labels model
-│  │  │- model_4-6 : shimacosh's models
-│  │  │- sugawara_efficientnetb3 : sugawarya's model
+│  │  │- shimacos_models : using adjacent image / label_smoothing / without any prediction 
+│  │  │- sugawara_efficientnetb3 : chenge backbone to efficientnetb3
 │  │  │- model_5
 │  │  │- model_6
 │  │  │- model_7

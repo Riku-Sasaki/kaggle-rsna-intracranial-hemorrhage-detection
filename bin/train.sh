@@ -22,7 +22,7 @@ sh bin/predict.sh
 cd ../../../
 
 # shimacos's model
-cd models/base_cnn/model_4-6
+cd models/base_cnn/shimacos_models
 sh bin/train_001.sh
 sh bin/test_001.sh
 sh bin/train_002.sh

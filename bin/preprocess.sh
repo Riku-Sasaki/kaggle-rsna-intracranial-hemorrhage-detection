@@ -9,6 +9,6 @@ sh bin/preprocess.sh
 cd ../../../
 
 # shimacos's preprocess
-cd models/base_cnn/model_4-6
+cd models/base_cnn/shimacos_models
 sh bin/preprocess.sh
 cd ../../../
