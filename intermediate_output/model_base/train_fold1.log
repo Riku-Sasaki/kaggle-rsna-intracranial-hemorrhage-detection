@@ -78,65 +78,3 @@ saved model to ../../../intermediate_output/model_base/fold1_ep1.pt
 0.280214 [0.383827 0.109078 0.316727 0.327129 0.155588 0.285321]
 saved model to ../../../intermediate_output/model_base/fold1_ep2.pt
 [best] ep:2 loss:0.3294 score:0.2802
-
------ 2019-11-23 19:25:46 -----
-/root/user/project/submit_dir/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_base/src/cnn/main.py train ./conf/model.py --fold 1 --gpu 0
-logpath: ../../../intermediate_output/model_base/train_fold1.log
-mode: train
-workdir: ../../../intermediate_output/model_base
-fold: 1
-batch size: 28
-acc: 1
-model: se_resnext50_32x4d
-pretrained: imagenet
-
------ 2019-11-23 19:45:13 -----
-/root/user/project/submit_dir/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_base/src/cnn/main.py train ./conf/model.py --fold 1 --gpu 0
-logpath: ../../../intermediate_output/model_base/train_fold1.log
-mode: train
-workdir: ../../../intermediate_output/model_base
-fold: 1
-batch size: 28
-acc: 1
-model: se_resnext50_32x4d
-pretrained: imagenet
-loss: BCEWithLogitsLoss
-optim: Adam
-dataset_policy: all
-window_policy: 2
-read dataset (819 records)
-applied dataset_policy all (819 records)
-use default(random) sampler
-dataset_policy: all
-window_policy: 2
-read dataset (204 records)
-applied dataset_policy all (204 records)
-use default(random) sampler
-train data: loaded 819 records
-valid data: loaded 204 records
-last_epoch: -1
-apex True
-
------ epoch 0 -----
-[train] 29/29 19(s) eta:0(s) loss:0.396425 loss200:0.396425 lr:6.00e-05 auc:0.5821 micro:0.5912 macro:0.5730
-0.339788 [0.363437 0.295286 0.355457 0.313836 0.309782 0.377283]
-[valid] 8/8 4(s) eta:0(s) loss:0.345944 loss200:0.345944 lr:0.00e+00 auc:0.6547 micro:0.6795 macro:0.6299
-0.299376 [0.414049 0.107422 0.321034 0.34355  0.168294 0.327232]
-saved model to ../../../intermediate_output/model_base/fold1_ep0.pt
-[best] ep:0 loss:0.3459 score:0.2994
-
------ epoch 1 -----
-[train] 29/29 13(s) eta:0(s) loss:0.193603 loss200:0.193603 lr:4.00e-05 auc:0.8576 micro:0.8717 macro:0.8436
-0.165947 [0.232154 0.1034   0.127576 0.139986 0.111432 0.214929]
-[valid] 8/8 2(s) eta:0(s) loss:0.342490 loss200:0.342490 lr:0.00e+00 auc:0.5746 micro:0.6100 macro:0.5392
-0.298295 [0.389242 0.119635 0.347261 0.354255 0.175341 0.313085]
-saved model to ../../../intermediate_output/model_base/fold1_ep1.pt
-[best] ep:1 loss:0.3425 score:0.2983
-
------ epoch 2 -----
-[train] 29/29 14(s) eta:0(s) loss:0.159208 loss200:0.159208 lr:2.67e-05 auc:0.9165 micro:0.9286 macro:0.9043
-0.136467 [0.182569 0.088422 0.110101 0.116361 0.095987 0.179258]
-[valid] 8/8 2(s) eta:0(s) loss:0.333511 loss200:0.333511 lr:0.00e+00 auc:0.6893 micro:0.7128 macro:0.6658
-0.283251 [0.388768 0.109082 0.319923 0.332656 0.156331 0.287231]
-saved model to ../../../intermediate_output/model_base/fold1_ep2.pt
-[best] ep:2 loss:0.3335 score:0.2833
