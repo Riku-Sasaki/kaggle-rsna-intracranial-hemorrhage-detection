@@ -298,17 +298,17 @@ def main():
     # Make Feature
     model_dfs_train = [
         make_feature(train_df, model_name, mode="train")
-        for model_name in tqdm(model_names)
+        for model_name in tqdm(model_names, desc="[Train]Feature Extraction")
     ]
     model_dfs_test = [
         make_feature(test_df, model_name, mode="test")
-        for model_name in tqdm(model_names)
+        for model_name in tqdm(model_names, desc="[Test]Feature Extraction")
     ]
     # Fill infinity
     model_dfs_train = [fill_infinity(model_df) for model_df in model_dfs_train]
     model_dfs_test = [fill_infinity(model_df) for model_df in model_dfs_test]
 
-    stacking_name = "stacking_cnn"
+    stacking_name = "cnn_stacking_2"
     os.makedirs(f"./intermediate_output/{stacking_name}", exist_ok=True)
 
     criterion = nn.BCEWithLogitsLoss(
@@ -321,7 +321,7 @@ def main():
         X_train, X_valid, y_train, y_valid = make_dataset(
             fold, model_dfs_train, feature_cols, target_cols, label
         )
-        valid_df = model_dfs_train[0].query(f"fold=={fold}")
+        valid_df = model_dfs_train[0].query(f"fold=={fold}").reset_index(drop=True)
         feature_dim = X_train.shape[-1]
         study_ids_train = (
             model_dfs_train[0]
@@ -391,7 +391,7 @@ def main():
             if metrics <= best_loss:
                 best_loss = metrics
                 for i in range(6):
-                    valid_df[f"{target_cols[i]}_pred"] = preds[:, i]
+                    valid_df.loc[:, f"{target_cols[i]}_pred"] = preds[:, i]
 
                 torch.save(
                     model.state_dict(),
@@ -403,7 +403,7 @@ def main():
                 ) as f:
                     pickle.dump(valid_df, f)
                 print(
-                    f"Epoch[{epoch}]_fold{fold}",
+                    f"Epoch[{epoch}]/fold{fold}",
                     "Train:",
                     np.mean(losses),
                     "Valid:",
@@ -442,7 +442,7 @@ def main():
             preds.append(torch.sigmoid(pred).detach().cpu().numpy())
         preds = np.concatenate(preds, axis=0)
         for i in range(6):
-            test_df[f"{target_cols[i]}_pred"] = preds[:, i]
+            test_df.loc[:, f"{target_cols[i]}_pred"] = preds[:, i]
         with open(
             f"./intermediate_output/{stacking_name}/stacking_test_pred_fold{fold}.pkl",
             "wb",
