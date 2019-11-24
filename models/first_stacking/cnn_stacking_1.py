@@ -651,7 +651,7 @@ def cnn_stacking(df_all, test_list):
         pred_valid.append(pred_valid_fold)
         pred_valid_ids.append(pred_valid_ids_fold)
 
-        torch.save({"model": model.state_dict(), "optimizer": optimizer.state_dict()}, "fold{}.pt".format(i))
+        #torch.save({"model": model.state_dict(), "optimizer": optimizer.state_dict()}, "fold{}.pt".format(i))
 
     array_pred_valid = []
     for i in range(5):
