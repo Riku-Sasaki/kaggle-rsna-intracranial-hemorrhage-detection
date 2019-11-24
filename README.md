@@ -11,9 +11,11 @@
 Plese download data to `./input` from https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection.
 
 ## Hardware
-We used GCP with following specs to train this model. <br>
-OS: Ubuntu <br>
+We used GCP with following specs to train this model.
+```
+OS: Ubuntu
 GPU: NVIDIA Tesla P100/V100
+```
 
 ## Usage
 
