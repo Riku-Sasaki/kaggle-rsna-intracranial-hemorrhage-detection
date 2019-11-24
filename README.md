@@ -37,9 +37,9 @@ sh bin/train.sh
 │- models
 │  │- base_cnn : base CNN models
 │  │  │- model_base : appian's base model
-│  │  │- model_1 : ricky's resize 410 model
-│  │  │- model_2 : ricky's second model
-│  │  │- senet154_customlabels : ricky's custom labels model
+│  │  │- ricky_se_resnext_410 : resize 410 model
+│  │  │- ricky_se_resnext101_mixup : chenge backbone to se_resnext101 and use mixup
+│  │  │- ricky_senet154_customlabels : custom labels model
 │  │  │- shimacos_models : using adjacent image / label_smoothing / without any prediction 
 │  │  │- sugawara_efficientnetb3 : chenge backbone to efficientnetb3
 │  │  │- model_5
@@ -78,14 +78,14 @@ sh bin/train.sh
    │  │- log files
    │  │- tmp files
    │
-   │- model_1
+   │- ricky_se_resnext_410
    │  │- fold{0-4}_test.pkl
    │  │- fold{0-4}_valid.pkl
    │  │- weight files
    │  │- log files
    │  │- tmp files
    │
-   │- model_2
+   │- ricky_se_resnext101_mixup
    │  │- ...
    │
    │- ...
@@ -101,8 +101,7 @@ sh bin/train.sh
    │
    │- ...
    │
-   │- lgbm_second_stacking
-      │- fold{0-4}_test.pkl
-      │- fold{0-4}_valid.pkl
-      │- tmp files
+   │- stacking2nd_lgbm
+      │- pred_test.pkl
+      │- pred_valid.pkl
 ```
