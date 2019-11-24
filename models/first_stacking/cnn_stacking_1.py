@@ -12,6 +12,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import Dataset
 from torch.utils.data import DataLoader
+from sklearn.metrics import log_loss
 
 
 def make_feats(df):
@@ -671,7 +672,7 @@ def cnn_stacking(df_all, test_list):
             pickle.dump({"ids": ids_valid_list[i], "outputs": array_pred_valid[i]}, f)
 
 
-    sub_id_list = pd.read_csv("input/test_wo_output.csv")
+    sub_id_list = pd.read_csv("input/stage_2_sample_submission.csv")
     ids = []
     for i in range(len(sub_id_list)):
         if i%6 == 0:
