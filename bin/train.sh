@@ -30,6 +30,7 @@ sh bin/test_002.sh
 sh bin/train_003.sh
 sh bin/test_003.sh
 
+
 # 1st stacking training
 cd models/first_stacking
 python cnn_stacking_1.py
