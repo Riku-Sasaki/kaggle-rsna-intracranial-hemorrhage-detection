@@ -1,10 +1,15 @@
-# kaggle-rsna-intracranial-hemorrhage-detection
+# kaggle-rsna-intracranial-hemorrhage-detection 10th place solution
 
 ## Pipeline
 
 ![](./fig/RSNA_pipeline.png)
 
-## usage
+## Data download
+
+Plese download data to `./input` from https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection.
+
+## Usage
+
 ```
 # prepare docker image
 sh bin/build_image.sh
@@ -21,7 +26,7 @@ sh bin/train.sh
 ```
 
 
-## directories
+## Directory tree
 ```
 
 │- raw_scripts : raw scripts that we used during the competition
