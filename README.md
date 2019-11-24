@@ -10,6 +10,11 @@
 
 Plese download data to `./input` from https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection.
 
+## Hardware
+We used GCP with following specs to train this model.
+OS: Ubuntu
+GPU: NVIDIA Tesla P100/V100
+
 ## Usage
 
 ```
@@ -19,7 +24,7 @@ sh bin/build_image.sh
 # 5-fold aplit / delete some noise / metadata extraction from dicom
 sh bin/preprocess.sh
 
-# If you want to run all scripts (take a long time)
+# If you want to run all train and predict scripts (take a long time)
 sh bin/run.sh
 
 # If you want to train specific model
