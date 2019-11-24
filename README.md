@@ -2,6 +2,7 @@
 
 ### usage
 ```
+sh bin/build_image.sh
 sh bin/preprocess.sh
 sh bin/train.sh
 ```
