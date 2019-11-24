@@ -1,11 +1,6 @@
 
-<<<<<<< HEAD
------ 2019-11-23 21:16:23 -----
-/root/user/project/submit_dir/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_3/src/cnn/main.py valid ./conf/model.py --snapshot ../../../intermediate_output/model_3/fold3_ep2.pt --output ../../../intermediate_output/model_3/fold3_valid.pkl --n-tta 5 --fold 3 --gpu 0
-=======
 ----- 2019-11-23 14:12:55 -----
 /root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_3/src/cnn/main.py valid ./conf/model.py --snapshot ../../../intermediate_output/model_3/fold3_ep2.pt --output ../../../intermediate_output/model_3/fold3_valid.pkl --n-tta 5 --fold 3 --gpu 0
->>>>>>> origin
 logpath: ../../../intermediate_output/model_3/valid_fold3.log
 mode: valid
 workdir: ../../../intermediate_output/model_3
@@ -22,18 +17,6 @@ window_policy: 2
 read dataset (243 records)
 applied dataset_policy all (243 records)
 use default(random) sampler
-<<<<<<< HEAD
-[valid] 9/9 9(s) eta:0(s) loss:0.294247 loss200:0.294247 lr:0.00e+00 auc:0.7271 micro:0.7666 macro:0.6877
-0.205472 [0.317643 0.087888 0.102817 0.24941  0.123477 0.239424]
-[valid] 9/9 4(s) eta:0(s) loss:0.292166 loss200:0.292166 lr:0.00e+00 auc:0.7474 micro:0.7869 macro:0.7079
-0.203894 [0.318088 0.085744 0.105219 0.231132 0.119276 0.249709]
-[valid] 9/9 4(s) eta:0(s) loss:0.290450 loss200:0.290450 lr:0.00e+00 auc:0.7542 micro:0.7951 macro:0.7132
-0.201193 [0.313091 0.085935 0.101199 0.2316   0.1185   0.244937]
-[valid] 9/9 4(s) eta:0(s) loss:0.293158 loss200:0.293158 lr:0.00e+00 auc:0.7344 micro:0.7751 macro:0.6937
-0.203388 [0.314283 0.08766  0.102377 0.247133 0.121158 0.236819]
-[valid] 9/9 4(s) eta:0(s) loss:0.287685 loss200:0.287685 lr:0.00e+00 auc:0.7664 micro:0.7977 macro:0.7351
-0.200712 [0.312143 0.084081 0.101447 0.235982 0.119818 0.239371]
-=======
 [valid] 9/9 12(s) eta:0(s) loss:0.289074 loss200:0.289074 lr:0.00e+00 auc:0.7488 micro:0.7781 macro:0.7195
 0.200838 [0.308244 0.084573 0.101105 0.24971  0.121394 0.232598]
 [valid] 9/9 5(s) eta:0(s) loss:0.292117 loss200:0.292117 lr:0.00e+00 auc:0.7514 micro:0.7841 macro:0.7187
@@ -44,5 +27,4 @@ use default(random) sampler
 0.201449 [0.309852 0.08535  0.101491 0.249159 0.121738 0.232701]
 [valid] 9/9 5(s) eta:0(s) loss:0.282953 loss200:0.282953 lr:0.00e+00 auc:0.7877 micro:0.8077 macro:0.7677
 0.197761 [0.305641 0.081743 0.100694 0.237562 0.118118 0.234927]
->>>>>>> origin
 saved to ../../../intermediate_output/model_3/fold3_valid.pkl

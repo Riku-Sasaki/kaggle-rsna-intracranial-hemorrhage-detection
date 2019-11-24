@@ -1,11 +1,6 @@
 
-<<<<<<< HEAD
------ 2019-11-23 20:31:43 -----
-/root/user/project/submit_dir/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_2/src/cnn/main.py test ./conf/model.py --snapshot ../../../intermediate_output/model_2/fold1_ep2.pt --output ../../../intermediate_output/model_2/fold1_test.pkl --n-tta 5 --fold 1 --gpu 0
-=======
 ----- 2019-11-23 13:07:16 -----
 /root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_2/src/cnn/main.py test ./conf/model.py --snapshot ../../../intermediate_output/model_2/fold1_ep2.pt --output ../../../intermediate_output/model_2/fold1_test.pkl --n-tta 5 --fold 1 --gpu 0
->>>>>>> origin
 logpath: ../../../intermediate_output/model_2/test_fold1.log
 mode: test
 workdir: ../../../intermediate_output/model_2

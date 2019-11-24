@@ -1,33 +1,6 @@
 
-<<<<<<< HEAD
------ 2019-11-23 21:17:06 -----
-/root/user/project/submit_dir/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_3/src/cnn/main.py test ./conf/model.py --snapshot ../../../intermediate_output/model_3/fold4_ep2.pt --output ../../../intermediate_output/modelmodel_3_base/fold4_test.pkl --n-tta 5 --fold 4 --gpu 0
-logpath: ../../../intermediate_output/model_3/test_fold4.log
-mode: test
-workdir: ../../../intermediate_output/model_3
-fold: 4
-batch size: 28
-acc: 1
-model: senet154
-pretrained: imagenet
-not loading optim
-loaded model from ../../../intermediate_output/model_3/fold4_ep2.pt
-dataset_policy: all
-window_policy: 2
-applied dataset_policy all (1074 records)
-use default(random) sampler
-
-
-
-
-
-
------ 2019-11-24 04:24:43 -----
-/root/user/project/submit_dir/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_3/src/cnn/main.py test ./conf/model.py --snapshot ../../../intermediate_output/model_3/fold4_ep2.pt --output ../../../intermediate_output/model_3/fold4_test.pkl --n-tta 5 --fold 4 --gpu 0
-=======
 ----- 2019-11-23 14:13:42 -----
 /root/user/project/kaggle-rsna-intracranial-hemorrhage-detection/models/base_cnn/model_3/src/cnn/main.py test ./conf/model.py --snapshot ../../../intermediate_output/model_3/fold4_ep2.pt --output ../../../intermediate_output/model_3/fold4_test.pkl --n-tta 5 --fold 4 --gpu 0
->>>>>>> origin
 logpath: ../../../intermediate_output/model_3/test_fold4.log
 mode: test
 workdir: ../../../intermediate_output/model_3
