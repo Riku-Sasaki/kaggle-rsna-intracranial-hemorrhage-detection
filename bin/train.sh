@@ -38,8 +38,8 @@ sh bin/predict.sh
 cd ../../../
 
 # 1st stacking training
+python models/first_stacking/cnn_stacking_1.py
 cd models/first_stacking
-python cnn_stacking_1.py
 docker run --rm \
     -v $PWD/:/root/ \
     -v $PWD/../../intermediate_output/:/root/intermediate_output/ \

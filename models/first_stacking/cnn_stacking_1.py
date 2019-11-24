@@ -18,7 +18,7 @@ def make_feats(df):
     """
     make position feature
     """
-    df["ImagePositionPatient_2"] = df["ImagePositionPatient"].progress_apply(
+    df["ImagePositionPatient_2"] = df["ImagePositionPatient"].apply(
         lambda x: x[2]
     )
     df = df.merge(
@@ -53,7 +53,7 @@ def pred_agg1_train(df):
             c + "_mean",
             c + "_std",
         ]
-        if c != "any_pred_tsukiyama_inceptionv4":
+        if c != "any_pred_model_base":
             del tmp["StudyInstanceUID"]
         new_feats.append(tmp)
     new_feats = pd.concat(new_feats, axis=1)
@@ -138,7 +138,7 @@ def pred_agg2(df):
     return df
 
 
-def make_dataset(path_to_train_raw="intermediate_output/train_raw.pkl", path_to_test_raw="intermediate_output/test_raw.pkl", save_data=True):
+def make_dataset(path_to_train_raw="intermediate_output/preprocessed_data/train_raw.pkl", path_to_test_raw="intermediate_output/preprocessed_data/test_raw.pkl", save_data=True):
     # load dataset
     train = pd.read_pickle(path_to_train_raw)
     train = make_feats(train)
@@ -156,23 +156,15 @@ def make_dataset(path_to_train_raw="intermediate_output/train_raw.pkl", path_to_
     ]
     # define model names
     models = [
-          'tsukiyama_inceptionv4',
-          'sasaki_se_resnext101_mixup_410_with_imagenet_norm',
-          'sasaki_se_resnext_410',
-          "tsukiyama_se_resnext",
-          "sasaki_senet154_customlabels",
-          "tsukiyama_xception",
-          "tsukiyama_inception_resnet_v2",
+          'model_base',
+          'model_1',
+          'model_2',
+          'model_3',
+          'model_4',
+          'model_5',
+          'model_6',
           "sugawara_efficientnetb3",
          ]
-    shimakoshi_label_dict = {
-        "pred_score0": "any_pred",
-        "pred_score1": "epidural_pred",
-        "pred_score2": "subdural_pred",
-        "pred_score3": "subarachnoid_pred",
-        "pred_score4": "intraventricular_pred",
-        "pred_score5": "intraparenchymal_pred"
-    }
 
     # train data
     # load and unite cnn predictions (train data)
@@ -182,24 +174,15 @@ def make_dataset(path_to_train_raw="intermediate_output/train_raw.pkl", path_to_
         n_tta = 5
         for n_fold in range(5):
             df = pd.read_pickle(f"intermediate_output/{model}/fold{n_fold}_valid.pkl")
-            if "shimakoshi" not in model:
-                tmp = np.zeros([len(df[0]["ids"]), 6])
-                for i in range(n_tta):
-                    tmp += df[i]["outputs"] / n_tta
-            else:
-                tmp = df[list(shimakoshi_label_dict.keys())].values
+            tmp = np.zeros([len(df[0]["ids"]), 6])
+            for i in range(n_tta):
+                tmp += df[i]["outputs"] / n_tta
             tmp = pd.DataFrame(tmp)
             tmp.columns = [tar_col + "_pred" for tar_col in target_cols]
-            if "shimakoshi" not in model:
-                tmp["ID"] = df[0]["ids"]
-                target = df[0]["targets"]
-            else:
-                tmp["ID"] = df["ID"]
-                cols = [c for c in df.columns if "label" in c]
-                cols.remove("labels")
-                target = df[cols].values
+            tmp["ID"] = df[0]["ids"]
+            target = df[0]["targets"]
             tmp["folds"] = n_fold
-            if model == "sasaki_senet154_customlabels":
+            if model == "model_3":
                 target[target<0.5] = 0
             tmp2 = pd.DataFrame(target)
             tmp2.columns = [tar_col + "_true" for tar_col in target_cols]
@@ -270,18 +253,12 @@ def make_dataset(path_to_train_raw="intermediate_output/train_raw.pkl", path_to_
         df_all_test = []
         for n_fold in range(5):
             df = pd.read_pickle(f"intermediate_output/{model}/fold{n_fold}_test.pkl")
-            if "shimakoshi" not in model:
-                tmp = np.zeros([len(df[0]["ids"]), 6])
-                for i in range(n_tta):
-                    tmp += df[i]["outputs"] / n_tta
-            else:
-                tmp = df[list(shimakoshi_label_dict.keys())].values
+            tmp = np.zeros([len(df[0]["ids"]), 6])
+            for i in range(n_tta):
+                tmp += df[i]["outputs"] / n_tta
             tmp = pd.DataFrame(tmp)
             tmp.columns = [tar_col + "_pred" for tar_col in target_cols]
-            if "shimakoshi" not in model:
-                tmp["ID"] = df[n_fold]["ids"]
-            else:
-                tmp["ID"] = df["ID"]
+            tmp["ID"] = df[n_fold]["ids"]
             tmp["folds"] = n_fold
             pred_columns = [c for c in tmp.columns if "pred" in c]
             tmp[pred_columns] = tmp[pred_columns].clip(1e-15, 1-1e-15)
@@ -440,35 +417,6 @@ class StackingContinuousDatasetTest(Dataset):
             return torch.FloatTensor(self.X[[idx-1, idx, idx+1]]), self.ids_list[idx]
 
 
-def get_loader(fold, mode):
-    if mode == "train":
-        train_loader = DataLoader(
-            StackingContinuousDataset(X_train_list[fold], all_train_batch_counter[fold], ids_train_list[fold], y_train_list[fold]),
-            shuffle=True,
-            batch_size=512,
-            num_workers=8,
-        )
-        return train_loader
-    elif mode == "valid":
-        valid_loader = DataLoader(
-            StackingContinuousDataset(X_valid_list[fold], all_valid_batch_counter[fold], ids_valid_list[fold], y_valid_list[fold]),
-            batch_size=512,
-            shuffle=False,
-            num_workers=8,
-        )
-        return valid_loader
-    elif mode == "test":
-        test_loader = DataLoader(
-            StackingContinuousDatasetTest(X_test_list[fold], test_batch_counter, ids_test_list[fold]),
-            batch_size=512,
-            shuffle=False,
-            num_workers=8,
-        )
-        return test_loader
-    else:
-        assert False
-
-
 class StackingModel(nn.Module):
     def __init__(self):
         super(StackingModel, self).__init__()
@@ -505,23 +453,15 @@ def cnn_stacking(df_all, test_list):
     ]
     # define model names
     models = [
-          'tsukiyama_inceptionv4',
-          'sasaki_se_resnext101_mixup_410_with_imagenet_norm',
-          'sasaki_se_resnext_410',
-          "tsukiyama_se_resnext",
-          "sasaki_senet154_customlabels",
-          "tsukiyama_xception",
-          "tsukiyama_inception_resnet_v2",
+          'model_base',
+          'model_1',
+          'model_2',
+          'model_3',
+          'model_4',
+          'model_5',
+          'model_6',
           "sugawara_efficientnetb3",
          ]
-    shimakoshi_label_dict = {
-        "pred_score0": "any_pred",
-        "pred_score1": "epidural_pred",
-        "pred_score2": "subdural_pred",
-        "pred_score3": "subarachnoid_pred",
-        "pred_score4": "intraventricular_pred",
-        "pred_score5": "intraparenchymal_pred"
-    }
 
     columns_all = list(df_all.columns.drop(['StudyInstanceUID', 'ID', 'folds', 'position']))
     columns_models = []
@@ -608,6 +548,35 @@ def cnn_stacking(df_all, test_list):
         X_valid_list[i] = X_valid.transpose(1, 0, 2)
     for i, X_test in enumerate(X_test_list):
         X_test_list[i] = X_test.transpose(1, 0, 2)
+
+
+    def get_loader(fold, mode):
+        if mode == "train":
+            train_loader = DataLoader(
+                StackingContinuousDataset(X_train_list[fold], all_train_batch_counter[fold], ids_train_list[fold], y_train_list[fold]),
+                shuffle=True,
+                batch_size=512,
+                num_workers=8,
+            )
+            return train_loader
+        elif mode == "valid":
+            valid_loader = DataLoader(
+                StackingContinuousDataset(X_valid_list[fold], all_valid_batch_counter[fold], ids_valid_list[fold], y_valid_list[fold]),
+                batch_size=512,
+                shuffle=False,
+                num_workers=8,
+            )
+            return valid_loader
+        elif mode == "test":
+            test_loader = DataLoader(
+                StackingContinuousDatasetTest(X_test_list[fold], test_batch_counter, ids_test_list[fold]),
+                batch_size=512,
+                shuffle=False,
+                num_workers=8,
+            )
+            return test_loader
+        else:
+            assert False
 
 
     # cnn stacking main
