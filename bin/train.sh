@@ -48,7 +48,4 @@ cd models/second_stacking
 sh ./bin/stacking.sh
 
 # make submission
-test=../../intermediate_output/stacking2nd_lgbm/pred_test.pkl
-sub=../../output/submission.csv
-clip=1e-6
-python -m make_submission --input ${test} --output ${sub} --clip ${clip}
+sh ./bin/submission.sh
