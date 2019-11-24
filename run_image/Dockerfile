@@ -35,7 +35,7 @@ ENV PATH /opt/conda/bin:$PATH
 RUN  pip install --upgrade pip \
      && pip install --upgrade setuptools \
      && pip install --ignore-installed opencv-python \
-     albumentations==0.3.3 \
+     albumentations==0.3.2 \
      addict \
      setuptools \
      tqdm \
@@ -58,7 +58,7 @@ RUN  pip install --upgrade pip \
      && cd .. \ 
      && rm -r apex
 
-RUN pip install -U --no-deps pytorch-lightning \
+RUN pip install -U --no-deps pytorch-lightning== \
      && pip install test_tube
 
 WORKDIR /root/

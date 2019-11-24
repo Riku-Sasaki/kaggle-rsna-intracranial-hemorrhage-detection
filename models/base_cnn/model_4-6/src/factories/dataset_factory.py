@@ -1,7 +1,14 @@
 import cv2
 import numpy as np
 import pandas as pd
-from albumentations import Compose, Flip, RandomCrop, Resize, Transpose
+from albumentations import (
+    Compose,
+    Flip,
+    RandomCrop,
+    Resize,
+    Transpose,
+    RandomBrightnessContrast,
+)
 from torch.utils.data import Dataset
 
 import pydicom
@@ -101,6 +108,9 @@ class RSNADataset(Dataset):
                     Resize(self.image_size, self.image_size, cv2.INTER_CUBIC),
                     Flip(p=p),
                     Transpose(p=p),
+                    RandomBrightnessContrast(
+                        brightness_limit=0.08, contrast_limit=0.08, p=p
+                    ),
                 ]
             )
         else:
