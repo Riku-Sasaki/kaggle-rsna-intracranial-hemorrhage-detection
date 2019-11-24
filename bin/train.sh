@@ -22,20 +22,13 @@ sh bin/predict.sh
 cd ../../../
 
 # shimacos's model
-cd models/base_cnn/densenet_adj_prediction
+cd models/base_cnn/model_4-6
 sh bin/train_001.sh
 sh bin/test_001.sh
-cd ../../../
-
-cd models/base_cnn/seresnext50_label_smoothing
 sh bin/train_002.sh
 sh bin/test_002.sh
-cd ../../../
-
-cd models/base_cnn/seresnext50_label_smoothing_without_any
 sh bin/train_003.sh
 sh bin/test_003.sh
-cd ../../../
 
 # 1st stacking training
 cd models/first_stacking

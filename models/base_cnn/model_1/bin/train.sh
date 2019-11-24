@@ -2,8 +2,15 @@ model=model
 gpu=0
 conf=./conf/${model}.py
 
-python -m src.cnn.main train ${conf} --fold 0 --gpu ${gpu}
-python -m src.cnn.main train ${conf} --fold 1 --gpu ${gpu}
-python -m src.cnn.main train ${conf} --fold 2 --gpu ${gpu}
-python -m src.cnn.main train ${conf} --fold 3 --gpu ${gpu}
-python -m src.cnn.main train ${conf} --fold 4 --gpu ${gpu}
+for fold in 0 1 2 3 4
+do
+docker run --rm \
+    -v $PWD/:/root/ \
+    -v $PWD/../../../intermediate_output/:/root/intermediate_output/ \
+    -v $PWD/../../../input/:/root/input/ \
+    -v $HOME/.cache/:/root/.cache \
+    --runtime=nvidia \
+    --ipc=host \
+    kaggle/pytorch \
+    python -m src.cnn.main train ${conf} --fold ${fold} --gpu ${gpu}
+done
