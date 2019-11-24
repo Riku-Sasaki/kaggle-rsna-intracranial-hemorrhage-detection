@@ -59,3 +59,10 @@ cd models/second_stacking
 python preprocess_for_sugawara_stacking2.py
 python get_feats_for_2nd_stacking.py
 python lgbm_second_stacking.py
+
+# make submission
+test=../../intermediate_output/stacking2nd_lgbm/pred_test.pkl
+sub=../../output/submission.csv
+clip=1e-6
+python -m make_submission --input ${test} --output ${sub} --clip ${clip}
+
