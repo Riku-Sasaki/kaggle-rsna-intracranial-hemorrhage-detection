@@ -5,5 +5,5 @@ docker run --rm \
     -v $HOME/.cache/:/root/.cache \
     --runtime=nvidia \
     --ipc=host \
-    kaggle/pytorch \
+    kaggle/rsna \
     python ./src/features/preprocess.py

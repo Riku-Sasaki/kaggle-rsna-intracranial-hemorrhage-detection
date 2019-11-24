@@ -11,6 +11,6 @@ docker run --rm \
     -v $HOME/.cache/:/root/.cache \
     --runtime=nvidia \
     --ipc=host \
-    kaggle/pytorch \
+    kaggle/rsna \
     python -m src.cnn.main train ${conf} --fold ${fold} --gpu ${gpu}
 done
