@@ -1,7 +1,13 @@
 # kaggle-rsna-intracranial-hemorrhage-detection
 
-directories
+### usage
+```
+sh bin/preprocess.sh
+sh bin/train.sh
+```
 
+
+### directories
 ```
 
 │- raw_scripts : raw scripts that we used during the competition
