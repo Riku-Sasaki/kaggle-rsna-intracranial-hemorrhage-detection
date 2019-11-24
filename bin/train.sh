@@ -50,7 +50,7 @@ docker run --rm \
     python cnn_stacking_2.py
 python lgbm_first_stacking.py
 python mlp_stacking.py
-cd ../../../
+cd ../../
 
 # 2nd stacking training
 python models/second_stacking/lgbm_second_stacking.py
