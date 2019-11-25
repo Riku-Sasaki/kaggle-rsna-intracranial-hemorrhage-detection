@@ -44,10 +44,10 @@ sh bin/train.sh
 │  │- stage_2_train.csv : train csv
 │  │
 │  │- stage_2_train_images
-│  │  │-*.dcm : train dicoms
+│  │  │_*.dcm : train dicoms
 │  │
 │  │- stage_2_test_images
-│  │  │-*.dcm : test dicoms
+│     │-*.dcm : test dicoms
 │
 │
 │- output
@@ -55,8 +55,9 @@ sh bin/train.sh
 │
 │
 │- bin : main file
+|  |- build_image.sh
 │  │- preprocess.sh
-│  │- train.sh
+│  │- run.sh
 │
 │
 │- models
@@ -69,7 +70,7 @@ sh bin/train.sh
 │  │  │- sugawara_efficientnetb3 : chenge backbone of model_base to efficientnetb3
 │  │  │- 2kyym_inception_resnet_v2 : chenge backbone of model_base to InceptionResnetV2
 │  │  │- 2kyym_inceptionv4 : chenge backbone of model_base to InceptionV4
-│  │  │- 2kyym_inceptionv4 : chenge backbone of model_base to Xception
+│  │  │- 2kyym_xception : chenge backbone of model_base to Xception
 │  │
 │  │- first_stacking : first level stacking models
 │  │  │- cnn_stacking_1.py (ricky)
