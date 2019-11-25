@@ -1,7 +1,7 @@
 # kaggle-rsna-intracranial-hemorrhage-detection 10th place solution
 
 - This is the project for RSNA Intracranial Hemorrhage Detection hosted on Kaggle in 2019.
-- We used @appian code (https://github.com/appian42/kaggle-rsna-intracranial-hemorrhage). Thank you very much appian !
+- We mostly used @appian code (https://github.com/appian42/kaggle-rsna-intracranial-hemorrhage). Thank you very much appian !
 
 ## Pipeline
 
